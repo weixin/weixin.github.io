@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/reveal.css">
+    <link rel="stylesheet" href="../css/white.css">
+    <link rel="stylesheet" href="../css/style-index.css">
+    <script src="../js/lib/snap.svg.js"></script>
+    <script src="../js/lib/jquery-1.11.1.min.js"></script>
+    <script src="../js/lib/TweenMax.min.js"></script>
+    <script src="../js/lib/head.min.js"></script>
+    <script src="../js/lib/svg-morpheus.js"></script>
+    <script src="../js/lib/reveal.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <!--BEGIN BG FIX-->
+
+    <div class="backgrounds__fix backgrounds__fix-pattern-morphing">
+        <svg id="js-svg-pattern-morphing" class="svg__pattern-morphing" width="200%" height="200%" style=""></svg>
+    </div>
+
+    <div class="backgrounds__fix backgrounds__fix-example__pattern-shine">
+        <svg width="100%" height="100%">
+            <linearGradient id="grad"
+                            x1="15%" y1="15%" x2="85%" y2="85%">
+                <stop class="stop stop--1" offset="0" stop-color="indigo"></stop>
+                <stop class="stop stop--1" offset="9%" stop-color="indigo"></stop>
+
+                <stop class="stop stop--2" offset="10%" stop-color="darkmagenta"></stop>
+                <stop class="stop stop--2" offset="19%" stop-color="darkmagenta"></stop>
+
+                <stop class="stop stop--3" offset="20%" stop-color="crimson"></stop>
+                <stop class="stop stop--3" offset="29%" stop-color="crimson"></stop>
+
+                <stop class="stop stop--4" offset="30%" stop-color="orangered"></stop>
+                <stop class="stop stop--4" offset="39%" stop-color="orangered"></stop>
+
+                <stop class="stop stop--5" offset="40%" stop-color="gold"></stop>
+                <stop class="stop stop--5" offset="49%" stop-color="gold"></stop>
+
+                <stop class="stop stop--6" offset="50%" stop-color="yellowgreen"></stop>
+                <stop class="stop stop--6" offset="59%" stop-color="yellowgreen"></stop>
+
+                <stop class="stop stop--7" offset="60%" stop-color="lightseagreen"></stop>
+                <stop class="stop stop--7" offset="69%" stop-color="lightseagreen"></stop>
+
+                <stop class="stop stop--8" offset="70%" stop-color="teal"></stop>
+                <stop class="stop stop--8" offset="79%" stop-color="teal"></stop>
+
+                <stop class="stop stop--9" offset="80%" stop-color="darkslateblue"></stop>
+                <stop class="stop stop--9" offset="89%" stop-color="darkslateblue"></stop>
+
+                <stop class="stop stop--10" offset="90%" stop-color="indigo"></stop>
+                <stop class="stop stop--10" offset="100%" stop-color="indigo"></stop>
+            </linearGradient>
+
+            <symbol id="section">
+                <path class="section" d="M2.04809472,114.5  L2.04809472,39.5 L1.54809472,40.3660254 L66,2.8660254 L66,77.5 Z"></path>
+            </symbol>
+
+            <symbol id="hex">
+                <use xlink:href="#section"/>
+                <use xlink:href="#section" transform="rotate(120, 66, 77.5)"/>
+                <use xlink:href="#section" transform="rotate(240, 65.5, 77)"/>
+            </symbol>
+
+            <pattern id="shining"
+                     viewBox="2,1,127, 218"
+                     width="127" height="218"
+                     patternUnits="userSpaceOnUse">
+
+                <use xlink:href="#hex"/>
+
+                <use xlink:href="#hex"
+                     transform="translate(64, 109)"/>
+                <use xlink:href="#hex"
+                     transform="translate(-64, 109)"/>
+
+                <use xlink:href="#hex"
+                     transform="translate(64, -109)"/>
+                <use xlink:href="#hex"
+                     transform="translate(-64, -109)"/>
+            </pattern>
+
+            <rect width="100%" height="100%" fill="url(#shining)"></rect>
+        </svg>
+    </div>
+
+    <div class="backgrounds__fix backgrounds__fix-example__filter-blur2">
+        <div class="gallery__content">
+            <div class="gallery">
+                <ul class="gallery-pictures">
+                    <li class="gallery-picture">
+                        <img src="../img/motion-blur/1.jpg" alt="img01">
+                    </li>
+                    <li class="gallery-picture">
+                        <img src="../img/motion-blur/2.jpg" alt="img02">
+                    </li>
+                    <li class="gallery-picture">
+                        <img src="../img/motion-blur/3.jpg" alt="img03">
+                    </li>
+                    <li class="gallery-picture">
+                        <img src="../img/motion-blur/4.jpg" alt="img04">
+                    </li>
+                    <li class="gallery-picture">
+                        <img src="../img/motion-blur/5.jpg" alt="img05">
+                    </li>
+                    <li class="gallery-picture">
+                        <img src="../img/motion-blur/6.jpg" alt="img06">
+                    </li>
+                    <li class="gallery-picture">
+                        <img src="../img/motion-blur/7.jpg" alt="img07">
+                    </li>
+                    <li class="gallery-picture">
+                        <img src="../img/motion-blur/8.jpg" alt="img08">
+                    </li>
+                    <li class="gallery-picture">
+                        <img src="../img/motion-blur/9.jpg" alt="img09">
+                    </li>
+                </ul>
+                <div class="gallery-pagination">
+                    <button class="gallery-pagination-dot"></button>
+                    <button class="gallery-pagination-dot"></button>
+                    <button class="gallery-pagination-dot"></button>
+                    <button class="gallery-pagination-dot"></button>
+                    <button class="gallery-pagination-dot"></button>
+                    <button class="gallery-pagination-dot"></button>
+                    <button class="gallery-pagination-dot"></button>
+                    <button class="gallery-pagination-dot"></button>
+                    <button class="gallery-pagination-dot"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--END BG FIX-->
+
+    <div class="slides">
+
+        <!--BEGIN COVER-->
+
+        <section id="cover" class="cover" style="height: 700px;">
+            <svg id="js-svg-cover" class="svg__cover"></svg>
+
+            <div class="cover__sub" style="display: block;">
+                请在chorome浏览器  ( 以及mac ) 下体验 --
+                <span>方潇仪</span>
+            </div>
+        </section>
+
+        <!--END COVER-->
+
+
+
+        <!--BEGIN INTRODUCTION-->
+
+        <section id="animation-type">
+            <div class="page__animation-type">
+                <div class="page__animation-type-item">CSS</div>
+                <div class="page__animation-type-item">Canvas</div>
+                <div class="page__animation-type-item">SVG</div>
+            </div>
+        </section>
+
+        <section id="svg-type">
+            <div class="page__svg-type">
+                <div class="page__svg-type-name">image.svg</div>
+                <span>→</span>
+                <div class="page__svg-type-desc"> &lt;image&gt;<br>background-image</div>
+            </div>
+            <div class="page__svg-type">
+                <div class="page__svg-type-name">xml</div>
+                <span>→</span>
+                <div class="page__svg-type-desc">inline SVG</div>
+            </div>
+        </section>
+
+        <section id="svg-bird">
+            <div class="bird">
+                <div class="back">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="100" viewBox="0 0 64.3 72.2" enable-background="new 0 0 64.3 72.2" xml:space="preserve">
+                    <g>
+                        <path d="M64.3,29.5c-0.3-1-1.6-1.3-2-1.3l-4.5-0.8c4.8-2.6,4.8-3.7,4.8-4.1c0-0.5-0.3-1-0.8-1.2
+            c-1.7-0.8-7.5-1.7-8.5-1.8c-1.8-3.5-5-6.4-9.4-8.9c0,0,0,0-0.1-0.1c-0.4-0.3-7.2-5.6-11.7-9.1C32.1,2.2,32,2.1,32,2.1
+            c-0.6-0.2-2.4-1-3.6-0.2c-0.5,0.3-0.8,0.9-0.8,1.5c-3.6-2.7-5.9-3.8-6.9-3.2c-0.3,0.1-0.9,0.5-0.8,1.6c0.2,2.6,2.6,5.9,4.4,7.7
+            c-0.2,0.1-0.4,0.1-0.6,0.2c-3.2,1.3-2.6,13.1-2.3,18.1l0.1,7.6c0,1.6-1.1,2.9-2.7,3.2c-1.5,0.2-3,0.3-4.6,0.3
+            c-0.8,0-1.7-0.1-2.7-0.1c0.6-3.8-0.6-8.2-2.4-9.1c-0.8-0.4-1.6-0.2-2.2,0.5c-0.6,0.7-0.9,1.8-1,3.3c-0.5-1.2-0.9-2.1-0.9-2.2
+            c-0.5-1.2-1.6-3.1-3-2.8c-1.3,0.2-1.7,1.9-1.8,3.4c-0.5,4.7,1.4,7.3,2.3,8.3c0,0,0,0,0,0c-0.1,0.4-3.3,9,1.7,14.9
+            c2.9,3.4,6.6,6.9,12.1,9v7.2c0,0.6,0.4,1,1,1s1-0.4,1-1v-6.5c2.5,0.7,5.3,1.1,8.6,1.2v4.1c0,0.6,0.4,1,1,1s1-0.4,1-1v-4.1
+            c12.5-0.4,20.3-6.7,23.4-12.7c2.2-4.1,3.4-10.9,3.6-17.8c2.4-0.6,4.9-1.9,7.5-3.8C64.1,30.9,64.5,30.2,64.3,29.5z" />
+                    </g>
+                    </svg>
+                </div>
+                <div class="line">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="100"  viewBox="0 0 64.3 72.2" enable-background="new 0 0 64.3 72.2" xml:space="preserve">
+                    <g>
+                        <path class="wing" d="M41.6,37.6c-0.5-0.1-1.1,0.2-1.2,0.8c-0.1,0.5,0.2,1.1,0.8,1.2c1.3,0.3,2.5,2.2,2.9,4.3
+            c0.2,0.9-0.3,2.3-1.1,3.4c-0.9,1.1-2,1.9-2.9,2c-1.3,0.1-2.3-2.5-2.6-4c0-0.1,0-0.2-0.1-0.3c-0.1-0.5-0.7-0.9-1.2-0.8
+            c-0.5,0.1-0.9,0.6-0.8,1.2c0,0.1,0,0.1,0.1,0.3c0.2,1.4-0.2,3-1.2,4.3c-1,1.4-2.5,2.3-3.9,2.4c-0.6,0.1-1-0.1-1.4-0.4
+            c-0.9-0.9-1-2.9-0.9-3.7c0-0.5-0.3-0.9-0.8-1c-0.5-0.1-1,0.2-1.1,0.6c0,0-1.5,4.1-4.4,4.9c-1,0.3-1.4-0.1-1.6-0.2
+            c-1-0.8-1.1-3.3-1.1-4.1c0-1.4,1.8-2.6,2.6-3c0.5-0.3,0.7-0.9,0.4-1.3c-0.3-0.5-0.9-0.7-1.3-0.4c-0.4,0.2-3.7,2-3.7,4.9
+            c0.1,2,0.3,4.4,1.9,5.6c0.6,0.4,1.3,0.7,2.1,0.7c0.4,0,0.8-0.1,1.2-0.2c1.9-0.5,3.3-1.9,4.3-3.2c0.2,0.7,0.6,1.4,1.1,1.9
+            c0.8,0.7,1.8,1.1,2.9,1c2-0.2,4-1.4,5.4-3.2c0.4-0.6,0.8-1.2,1-1.8c0.8,1.1,1.8,2,3.3,1.9c1.5-0.2,3.1-1.2,4.3-2.8
+            c1.2-1.6,1.8-3.4,1.5-4.9C45.5,40.5,43.7,38,41.6,37.6z"></path>
+                        <path class="eye" d="M40,27.5L40,27.5c0.2,0,0.5,0,0.7-0.1c1-0.2,2-0.9,2.5-1.9c0.4-0.8,0.5-1.7,0.3-2.4
+            c-0.6-1.4-3.1-1.9-4.3-1.9c-0.4,0-0.7,0-1,0.1c-0.2,0-0.3,0.1-0.4,0.2c-0.6,0.6-1.4,1.9-0.7,3.5C37.6,26.2,38.2,27.5,40,27.5z
+             M39,23.2c0,0,0.1,0,0.2,0c1,0,2.2,0.4,2.4,0.6c0,0.1,0,0.4-0.2,0.7c-0.1,0.2-0.5,0.7-1.1,0.8c-0.1,0-0.2,0-0.3,0h0
+            c-0.4,0-0.6-0.2-1.1-1.4C38.7,23.8,38.9,23.5,39,23.2z"></path>
+                        <path d="M64.3,29.5c-0.3-1-1.6-1.3-2-1.3l-4.5-0.8c4.8-2.6,4.8-3.7,4.8-4.1c0-0.5-0.3-1-0.8-1.2
+            c-1.7-0.8-7.5-1.7-8.5-1.8c-1.8-3.5-5-6.4-9.4-8.9c0,0,0,0-0.1-0.1c-0.4-0.3-7.2-5.6-11.7-9.1C32.1,2.2,32,2.1,32,2.1
+            c-0.6-0.2-2.4-1-3.6-0.2c-0.5,0.3-0.8,0.9-0.8,1.5c-3.6-2.7-5.9-3.8-6.9-3.2c-0.3,0.1-0.9,0.5-0.8,1.6c0.2,2.6,2.6,5.9,4.4,7.7
+            c-0.2,0.1-0.4,0.1-0.6,0.2c-3.2,1.3-2.6,13.1-2.3,18.1l0.1,7.6c0,1.6-1.1,2.9-2.7,3.2c-1.5,0.2-3,0.3-4.6,0.3
+            c-0.8,0-1.7-0.1-2.7-0.1c0.6-3.8-0.6-8.2-2.4-9.1c-0.8-0.4-1.6-0.2-2.2,0.5c-0.6,0.7-0.9,1.8-1,3.3c-0.5-1.2-0.9-2.1-0.9-2.2
+            c-0.5-1.2-1.6-3.1-3-2.8c-1.3,0.2-1.7,1.9-1.8,3.4c-0.5,4.7,1.4,7.3,2.3,8.3c0,0,0,0,0,0c-0.1,0.4-3.3,9,1.7,14.9
+            c2.9,3.4,6.6,6.9,12.1,9v7.2c0,0.6,0.4,1,1,1s1-0.4,1-1v-6.5c2.5,0.7,5.3,1.1,8.6,1.2v4.1c0,0.6,0.4,1,1,1s1-0.4,1-1v-4.1
+            c12.5-0.4,20.3-6.7,23.4-12.7c2.2-4.1,3.4-10.9,3.6-17.8c2.4-0.6,4.9-1.9,7.5-3.8C64.1,30.9,64.5,30.2,64.3,29.5z M60.1,23.6
+            c-0.9,0.8-2.9,1.9-4.9,2.9c-0.1-0.6-0.2-1.1-0.3-1.6c-0.2-0.8-0.4-1.7-0.7-2.4C56.3,22.8,58.7,23.2,60.1,23.6z M31.1,3.9
+            c2.9,2.3,5.1,4,6.7,5.3C36.7,9,35.4,9,34.2,8.9c0,0,0,0,0,0c-2.3-2.1-4.4-4.5-4.6-5.3C29.9,3.5,30.5,3.7,31.1,3.9z M26.7,9
+            c-0.7-0.5-4.2-4.1-4.8-6.9c1.6,0.7,5.5,3.6,9.2,6.7C29.7,8.9,28.2,8.9,26.7,9C26.7,9,26.7,9,26.7,9z M8.3,31.5
+            c0.7,0.7,1.8,3.8,1.1,7.2c-0.6,0-1.1,0-1.7,0.1c0-0.2,0-0.4,0-0.6C7.6,34.5,7.8,32.3,8.3,31.5z M2.1,32.1c0.1-0.6,0.2-1,0.2-1.3
+            c0.3,0.3,0.6,0.9,0.8,1.3c0.6,1.4,2.2,5.2,2.6,6.9c-0.5,0.1-1,0.1-1.4,0.2c-0.1-0.1-0.1-0.2-0.2-0.2C4.1,39,1.6,37,2.1,32.1z
+             M50.4,52.3c-2.9,5.5-10.3,11.5-22.3,11.6l-0.6,0c-11.7,0-17.5-4.9-22-10.1c-3.7-4.3-2-10.7-1.5-12.4c1.3-0.4,3.7-0.6,6.9-0.6
+            c1.1,0,2.2,0,3.1,0.1c1.6,0.1,3.3,0,4.9-0.3c2.5-0.4,4.4-2.6,4.4-5.1l-0.1-7.7c-0.6-8-0.1-15.6,1-16.2c0.9-0.4,3.5-0.6,6.9-0.6
+            c4.2,0,7.7,0.3,8.2,0.6c0.1,0.1,0.4,0.2,0.8,0.4c2.8,1.2,11.2,5,12.7,13.5C54.9,35.6,53.2,47.1,50.4,52.3z M55.8,33.3
+            c0-1.4-0.1-2.9-0.2-4.3l6.2,1.1C59.7,31.7,57.7,32.7,55.8,33.3z"></path>
+                    </g>
+                </svg>
+                </div>
+            </div>
+            <pre class="fragment code-small"><code class="html" data-trim data-noescape>
+&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="bird" width="100"  viewBox="0 0 64.3 72.2"&gt;
+    &lt;path class="wing" d="M41.6,37.6c-0.5-0.1-1.1,0.2-1.2,0.8c-0.1,0.5,0.2,1.1,0.8,1.2c1.3,0.3,2.5,2.2,2.9,4.3
+    c0.2,0.9-0.3,2.3-1.1,3.4c-0.9,1.1-2,1.9-2.9,2c-1.3,0.1-2.3-2.5-2.6-4c0-0.1,0-0.2-0.1-0.3c-0.1-0.5-0.7-0.9-1.2-0.8
+    c-0.5,0.1-0.9,0.6-0.8,1.2c0,0.1,0,0.1,0.1,0.3c0.2,1.4-0.2,3-1.2,4.3c-1,1.4-2.5,2.3-3.9,2.4c-0.6,0.1-1-0.1-1.4-0.4
+    c-0.9-0.9-1-2.9-0.9-3.7c0-0.5-0.3-0.9-0.8-1c-0.5-0.1-1,0.2-1.1,0.6c0,0-1.5,4.1-4.4,4.9c-1,0.3-1.4-0.1-1.6-0.2
+    c-1-0.8-1.1-3.3-1.1-4.1c0-1.4,1.8-2.6,2.6-3c0.5-0.3,0.7-0.9,0.4-1.3c-0.3-0.5-0.9-0.7-1.3-0.4c-0.4,0.2-3.7,2-3.7,4.9
+    c0.1,2,0.3,4.4,1.9,5.6c0.6,0.4,1.3,0.7,2.1,0.7c0.4,0,0.8-0.1,1.2-0.2c1.9-0.5,3.3-1.9,4.3-3.2c0.2,0.7,0.6,1.4,1.1,1.9
+    c0.8,0.7,1.8,1.1,2.9,1c2-0.2,4-1.4,5.4-3.2c0.4-0.6,0.8-1.2,1-1.8c0.8,1.1,1.8,2,3.3,1.9c1.5-0.2,3.1-1.2,4.3-2.8
+    c1.2-1.6,1.8-3.4,1.5-4.9C45.5,40.5,43.7,38,41.6,37.6z" /&gt;
+    &lt;path class="eye" d="M40,27.5L40,27.5c0.2,0,0.5,0,0.7-0.1c1-0.2,2-0.9,2.5-1.9c0.4-0.8,0.5-1.7,0.3-2.4
+    c-0.6-1.4-3.1-1.9-4.3-1.9c-0.4,0-0.7,0-1,0.1c-0.2,0-0.3,0.1-0.4,0.2c-0.6,0.6-1.4,1.9-0.7,3.5C37.6,26.2,38.2,27.5,40,27.5z
+    M39,23.2c0,0,0.1,0,0.2,0c1,0,2.2,0.4,2.4,0.6c0,0.1,0,0.4-0.2,0.7c-0.1,0.2-0.5,0.7-1.1,0.8c-0.1,0-0.2,0-0.3,0h0
+    c-0.4,0-0.6-0.2-1.1-1.4C38.7,23.8,38.9,23.5,39,23.2z" /&gt;
+    &lt;path d="M64.3,29.5c-0.3-1-1.6-1.3-2-1.3l-4.5-0.8c4.8-2.6,4.8-3.7,4.8-4.1c0-0.5-0.3-1-0.8-1.2
+    c-1.7-0.8-7.5-1.7-8.5-1.8c-1.8-3.5-5-6.4-9.4-8.9c0,0,0,0-0.1-0.1c-0.4-0.3-7.2-5.6-11.7-9.1C32.1,2.2,32,2.1,32,2.1
+    c-0.6-0.2-2.4-1-3.6-0.2c-0.5,0.3-0.8,0.9-0.8,1.5c-3.6-2.7-5.9-3.8-6.9-3.2c-0.3,0.1-0.9,0.5-0.8,1.6c0.2,2.6,2.6,5.9,4.4,7.7
+    c-0.2,0.1-0.4,0.1-0.6,0.2c-3.2,1.3-2.6,13.1-2.3,18.1l0.1,7.6c0,1.6-1.1,2.9-2.7,3.2c-1.5,0.2-3,0.3-4.6,0.3
+    c-0.8,0-1.7-0.1-2.7-0.1c0.6-3.8-0.6-8.2-2.4-9.1c-0.8-0.4-1.6-0.2-2.2,0.5c-0.6,0.7-0.9,1.8-1,3.3c-0.5-1.2-0.9-2.1-0.9-2.2
+    c-0.5-1.2-1.6-3.1-3-2.8c-1.3,0.2-1.7,1.9-1.8,3.4c-0.5,4.7,1.4,7.3,2.3,8.3c0,0,0,0,0,0c-0.1,0.4-3.3,9,1.7,14.9
+    c2.9,3.4,6.6,6.9,12.1,9v7.2c0,0.6,0.4,1,1,1s1-0.4,1-1v-6.5c2.5,0.7,5.3,1.1,8.6,1.2v4.1c0,0.6,0.4,1,1,1s1-0.4,1-1v-4.1
+    c12.5-0.4,20.3-6.7,23.4-12.7c2.2-4.1,3.4-10.9,3.6-17.8c2.4-0.6,4.9-1.9,7.5-3.8C64.1,30.9,64.5,30.2,64.3,29.5z M60.1,23.6
+    c-0.9,0.8-2.9,1.9-4.9,2.9c-0.1-0.6-0.2-1.1-0.3-1.6c-0.2-0.8-0.4-1.7-0.7-2.4C56.3,22.8,58.7,23.2,60.1,23.6z M31.1,3.9
+    c2.9,2.3,5.1,4,6.7,5.3C36.7,9,35.4,9,34.2,8.9c0,0,0,0,0,0c-2.3-2.1-4.4-4.5-4.6-5.3C29.9,3.5,30.5,3.7,31.1,3.9z M26.7,9
+    c-0.7-0.5-4.2-4.1-4.8-6.9c1.6,0.7,5.5,3.6,9.2,6.7C29.7,8.9,28.2,8.9,26.7,9C26.7,9,26.7,9,26.7,9z M8.3,31.5
+    c0.7,0.7,1.8,3.8,1.1,7.2c-0.6,0-1.1,0-1.7,0.1c0-0.2,0-0.4,0-0.6C7.6,34.5,7.8,32.3,8.3,31.5z M2.1,32.1c0.1-0.6,0.2-1,0.2-1.3
+    c0.3,0.3,0.6,0.9,0.8,1.3c0.6,1.4,2.2,5.2,2.6,6.9c-0.5,0.1-1,0.1-1.4,0.2c-0.1-0.1-0.1-0.2-0.2-0.2C4.1,39,1.6,37,2.1,32.1z
+    M50.4,52.3c-2.9,5.5-10.3,11.5-22.3,11.6l-0.6,0c-11.7,0-17.5-4.9-22-10.1c-3.7-4.3-2-10.7-1.5-12.4c1.3-0.4,3.7-0.6,6.9-0.6
+    c1.1,0,2.2,0,3.1,0.1c1.6,0.1,3.3,0,4.9-0.3c2.5-0.4,4.4-2.6,4.4-5.1l-0.1-7.7c-0.6-8-0.1-15.6,1-16.2c0.9-0.4,3.5-0.6,6.9-0.6
+    c4.2,0,7.7,0.3,8.2,0.6c0.1,0.1,0.4,0.2,0.8,0.4c2.8,1.2,11.2,5,12.7,13.5C54.9,35.6,53.2,47.1,50.4,52.3z M55.8,33.3
+    c0-1.4-0.1-2.9-0.2-4.3l6.2,1.1C59.7,31.7,57.7,32.7,55.8,33.3z" /&gt;
+&lt;/svg&gt;
+            </code></pre>
+        </section>
+
+        <section id="vector-intro">
+            <svg class="svg__vector-intro" version="1.1" id="js-svg-vector-intro" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
+	 viewBox="0 0 960 200" style="enable-background:new 0 0 960 200;" xml:space="preserve">
+                    <rect x="40.2" y="25.3" class="st0 js_svg_rect" width="150" height="150"/>
+                    <circle class="st0 js_svg_circle" cx="354.4" cy="100.3" r="75"/>
+                    <polygon class="st0 js_svg_polygon" points="593.6,25.3 617.9,74.7 672.4,82.6 633,121.1 642.3,175.3 593.6,149.7 544.8,175.3
+                    	554.1,121.1 514.7,82.6 569.2,74.7 "/>
+                    <path class="st0 js_svg_path" d="M923,107.3c-11.5,41.5-51.2,38.8-66.5,29.5C829,120,836.9,77.9,810,63.3
+                    	c-21.5-11.6-59-5-67.5,33.5"/>
+                </svg>
+            <pre>
+                <code class="xml" data-noescape data-trim>
+&lt;svg class="svg__vector-intro" viewBox="0 0 960 200"&gt;
+    <span class="js-code-vector-intro_rect fragment">&lt;rect x="40.2" y="25.3" width="150" height="150"/&gt;</span><br>
+    <span class="js-code-vector-intro_circle fragment">&lt;circle cx="354.4" cy="100.3" r="75"/&gt;</span><br>
+    <span class="js-code-vector-intro_polygon fragment">&lt;polygon points="593.6,25.3 617.9,74.7 672.4,82.6 633,121.1 642.3,175.3
+        593.6,149.7 544.8,175.3 554.1,121.1 514.7,82.6 569.2,74.7 "/&gt;</span><br>
+    <span class="js-code-vector-intro_path fragment">&lt;path d="M923,107.3C11.5,41.5 51.2,38.8 66.5,29.5C829,120
+        836.9,77.9 810,63.3C21.5 11.6 59 5 67.5,33.5"/&gt;</span>
+&lt;/svg&gt;
+                </code></pre>
+        </section>
+
+        <section id="svg-attribute" data-background-color="#306589">
+            <div class="page__attribute-title">SVG Special Attribute</div>
+            <ul class="page__attribute-list">
+                <li>fill</li>
+                <li>fill-opacity</li>
+                <li>stroke</li>
+                <li>stroke-opacity</li>
+                <li>stroke-dasharray</li>
+                <li>stroke-dashoffset</li>
+                <li>stroke-linecap</li>
+                <li>stroke-width</li>
+                <li>marker</li>
+                <li>marker-start</li>
+                <li>alignment-baseline</li>
+                <li>text-anchor</li>
+                <li>flood-color</li>
+                <li>flood-opacity</li>
+                <li>stop-color</li>
+                <li>stop-opacity</li>
+                <li>...</li>
+            </ul>
+        </section>
+
+        <!--END INTRODUCTION-->
+
+
+
+        <!--BEGIN LINEDRAWING-->
+
+        <section id="effect-title_lineDrawing">
+            <div class="effect-title__wrap">
+                <div class="effect-title__left"></div>
+                <div class="effect-title__name">LINE DRAWING<span class="effect-title__sub-name">描线</span></div>
+            </div>
+        </section>
+
+        <section id="line-drawing" data-background-color="#306589">
+            <svg id="js-svg-cssconf-logo" class="svg__css-conf" width="100%" height="500" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+                <path d="M 257.85024,158.16843 754.90716,35.953537 731.06035,405.57906 228.78695,448.8014 z" style="stroke-dasharray: 1678.47, 1678.47; stroke-dashoffset: 0;"></path>
+                <path d="m 259.83736,136.30872 c 0,0 -6.74232,0.97288 -11.61303,5.46502 -3.96751,3.659 -6.12527,9.40831 -7.01729,20.86596 l -36.5158,346.77284 c 0,0 -3.47753,13.41382 10.68151,14.15903 l 517.67468,-21.11485 c 0,0 18.38216,0.74522 19.87257,-19.62369 L 784.07068,11.384991 c 0,0 0.059,-13.07475 -23.20111,-7.2266959 L 259.83736,136.30872 z" style="stroke-dasharray: 1972.67, 1972.67; stroke-dashoffset: 0;"></path>
+                <path d="m 211.29271,522.89381 c 0,0 12.5259,6.63947 19.72988,5.64573 l 513.45197,-19.12737 c 0,0 18.87884,0.74557 21.61112,-18.87848 l 29.5596,-462.528221 c 0,0 1.49047,-10.184447 -13.54272,-21.4997553" style="stroke-dasharray: 1056.02, 1056.02; stroke-dashoffset: 0;"></path>
+                <path d="M 208.59466,472.34637 756.27723,432.02629" style="stroke-dasharray: 549.165, 549.165; stroke-dashoffset: 0;"></path>
+                <path d="m 591.36015,515.11602 11.15099,41.36862 c 0,0 8.62435,33.16197 -11.15099,33.16197 l -55.35924,4.26821 c 0,0 -9.65275,0.58387 -13.08781,0.58387 -1.35069,0 -5.16991,0.0265 -5.16991,0.0265 l -149.57016,-0.0347 c 0,0 -1.45726,0.12035 -1.52173,-0.0853 -0.14195,-0.4531 1.2173,-0.44973 1.2173,-0.44973 l 93.42473,-4.68143 c 0,0 23.85536,1.49042 23.85127,-27.57288 l -2.70885,-42.52741" style="stroke-dasharray: 487.13, 487.13; stroke-dashoffset: 0;"></path>
+                <path d="m 595.82547,514.94947 11.52956,43.3982 c 0,0 8.23944,32.78936 -11.52956,38.00586 h -58.52044 l -12.10971,0.99374 -16.58099,-0.61332 -128.7355,0.17849 c 0,0 -10.74373,-0.45795 -13.22753,-2.50727" style="stroke-dasharray: 318.352, 318.352; stroke-dashoffset: 0;"></path>
+                <path d="m 486.38703,90.292617 c -0.3846,2.126175 -1.9686,3.619643 -3.5379,3.335758 -1.5693,-0.283875 -2.5297,-2.237606 -2.1451,-4.363775 0.38461,-2.12617 1.96859,-3.619642 3.53789,-3.335762 1.56931,0.283879 2.52971,2.23761 2.14511,4.363779 z" style="stroke-dasharray: 21.487, 21.487; stroke-dashoffset: 0;"></path>
+                <path d="m 483.95449,571.8934 120.41968,0" style="stroke-dasharray: 120.42, 120.42; stroke-dashoffset: 0;"></path>
+                <path class="line-round" d="m 783.49986,166.74023 -9.12881,133.48624" style="stroke-dasharray: 133.798, 133.798; stroke-dashoffset: 0;"></path>
+                <path class="line-round" d="m 773.91008,309.26031 -1.81646,29.43591" style="stroke-dasharray: 29.4919, 29.4919; stroke-dashoffset: 0;"></path>
+            </svg>
+            <div class="fragment" id="js-line-drawing"></div>
+        </section>
+
+        <section id="line-control">
+            <div class="line-control__svg-container">
+                <svg id="js-svg-line-control" xmlns="http://www.w3.org/2000/svg" width="800" viewBox="0 0 581 98">
+                    <path id="js-line-path"
+                        d="M62.9 14.9c-25-7.74-56.6 4.8-60.4 24.3-3.73 19.6 21.6 35 39.6 37.6 42.8 6.2 72.9-53.4 116-58.9 65-18.2 191 101 215 28.8 5-16.7-7-49.1-34-44-34 11.5-31 46.5-14 69.3 9.38 12.6 24.2 20.6 39.8 22.9 91.4 9.05 102-98.9 176-86.7 18.8 3.81 33 17.3 36.7 34.6 2.01 10.2.124 21.1-5.18 30.1"
+                        stroke="#0171bb" stroke-width="2" fill="none" stroke-dasharray="" stroke-dashoffset="0.00"></path>
+                </svg>
+            </div>
+
+            <div class="line-control__control">
+                <div class="line-control__element" id="js-line-control-dasharray">
+                    <div class="line-control__title"><span class="line-control__label">stroke-dasharray:</span><span
+                        class="line-control__value">0</span><span class="line-control__value">0</span></div>
+                    <div class="line-control__bar">
+                        <input type="range" min="0" max="1" step="any" value="0">
+                    </div>
+                </div>
+                <div class="line-control__element" id="js-line-control-dashoffset">
+                    <div class="line-control__title"><span class="line-control__label">stroke-dashoffset: </span><span
+                        class="line-control__value">0</span></div>
+                    <div class="line-control__bar">
+                        <input type="range" min="0" max="1" step="any" value="0">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="path-length">
+            <div class="page__main-title page__main-title_tide">path</div>
+            <pre><code class="html">
+&lt;svg width="800" viewBox="0 0 581 98"&gt;
+    &lt;path id="path"
+          d="M62.9 14.9....2 11 33 17.3 36 21.1-37.6 42.8 6.2 72.9z"
+          stroke="#0171bb" stroke-width="2" /&gt;
+&lt;/svg&gt;
+            </code></pre>
+
+
+            <pre><code class="javascript">
+var path = document.getElementByID("path");
+path.getTotalLength();
+            </code></pre>
+        </section>
+
+        <section id="other-length">
+            <div class="page__main-title page__main-title_tide">rect, circle, polygon...</div>
+            <div class="fragment page__desc">转换</div>
+            <div class="fragment page__desc">计算</div>
+        </section>
+
+        <section id="example__line1">
+            <svg viewBox="0 0 1216.2 144.9" width="900" id="js-svg-line-morphing" class="svg__line-morphing" >
+                <path class="st0 letter letter-d letter-d-0" d="M10,127.4c0,0,17,0,26,0c9.6,0,44.8-6.5,44.8-50.5S46,25.4,36,25.4c-11,0-26,0-26,0"/>
+                <line class="st1 letter letter-a letter-a-1" x1="175" y1="102.4" x2="229" y2="102.4"/>
+                <path class="st0 letter letter-o" d="M541.3,25.2c32.7,0,51,28.9,51,51c0,28.2-22.8,51-51,51s-51-22.8-51-51S513.2,25.2,541.3,25.2l-0.3,102"/>
+                <path class="st0 letter letter-g" d="M382.3,86.5h20.3v31.9c-8.1,5.5-17.9,8.7-28.5,8.7c-28.2,0-51-22.8-51-51s22.8-51,51-51
+		c8.1,0,15.8,1.9,22.6,5.3v106.4"/>
+                <line class="st0 letter letter-e" x1="834.5" y1="15.9" x2="834.5" y2="136.9"/>
+                <line class="st0 letter letter-d" x1="9.5" y1="15.9" x2="9.5" y2="136.9"/>
+                <line class="st0 letter letter-b" x1="685.5" y1="15.9" x2="685.5" y2="136.9"/>
+                <line class="st0 letter letter-r" x1="979.5" y1="15.9" x2="979.5" y2="136.9"/>
+                <line class="st0 letter letter-t" x1="1158.5" y1="15.9" x2="1158.5" y2="136.9"/>
+                <line class="st1 letter letter-e letter-e-0" x1="898" y1="24.4" x2="825" y2="24.4"/>
+                <line class="st1 letter letter-t letter-t-0" x1="1201" y1="24.4" x2="1116" y2="24.4"/>
+                <line class="st1 letter letter-e letter-e-1" x1="888" y1="73.4" x2="825" y2="73.4"/>
+                <line class="st1 letter letter-e letter-e-2" x1="898" y1="128.4" x2="825" y2="128.4"/>
+                <path class="st1 letter letter-r letter-r-0" d="M989,24.4h17c0,0,32.3-1.2,32.3,31.7s-32.1,31.1-32.1,31.1L989,87.4"/>
+                <path class="st1 letter letter-b letter-b-0" d="M695,24.4h17c0,0,23.3-0.8,23.3,24.8s-23.4,24.3-23.4,24.3l-16.9,0h23c0,0,27.3-0.8,27.3,27.8
+		s-26.1,27.2-26.1,27.2l-24.4,0"/>
+                <polyline class="st1 letter letter-r letter-r-1" points="1010.6,90.2 1043.5,134.9 1043.5,136.9 	"/>
+                <polyline class="st0 letter letter-a letter-a-0" points="244.5,15.9 244.5,138.9 244.5,138.1 201.7,38.7 159.5,137.9 159.5,138.9 	"/>
+            </svg>
+        </section>
+
+        <section id="example__line2">
+            <svg height="540" viewBox="0 0 800 600" class="svg__line-example" id="js-svg-line-example">
+                <symbol id="s-text">
+                    <text text-anchor="middle" x="50%" y="42%" class="text--line">
+                        Elastic
+                    </text>
+                    <text text-anchor="middle" x="50%" y="72%" class="text--line2">
+                        Stroke
+                    </text>
+                </symbol>
+
+                <g class="g-ants">
+                    <use xlink:href="#s-text"
+                         class="text-copy"></use>
+                    <use xlink:href="#s-text"
+                         class="text-copy"></use>
+                    <use xlink:href="#s-text"
+                         class="text-copy"></use>
+                    <use xlink:href="#s-text"
+                         class="text-copy"></use>
+                    <use xlink:href="#s-text"
+                         class="text-copy"></use>
+                </g>
+            </svg>
+        </section>
+
+        <!--EN LINEDRAWING-->
+
+
+
+
+
+        <!--BEGIN MORPHING-->
+
+        <section id="effect-title_morphing">
+            <div class="effect-title__wrap">
+                <div class="effect-title__left"></div>
+                <div class="effect-title__name">MORPHING<span class="effect-title__sub-name">变形</span></div>
+            </div>
+        </section>
+
+
+        <section id="morphing">
+            <svg id="js-svg-morphing" width="100" height="100"></svg>
+            <pre class="fragment">
+                <code class="html" data-trim data-noescape>
+                    &lt;path d="
+<span id="js-morphing-code" class="hljs-string">M 0 0 C 50 0 50 0 100 0 C 100 50 100 50 100 100 C 50 100 50 100 0 100
+C 0 50 0 50 0 0</span>
+" /&gt;
+                </code></pre>
+        </section>
+
+        <section id="morphing-path">
+            <div class="page__mophing-path">
+                <img src="../img/animated-svg-ff.svg">
+            </div>
+        </section>
+
+        <section id="snap-morphing">
+            <div class="page__main-title page__main-title_tide">Snap.svg.js</div>
+            <pre class="fragment"><code class="html" data-trim data-noescape>
+&lt;svg id="js-svg" width="100" height="100"&gt;
+    &lt;path id="path1" d="M 0 0 C 50 0 50 0 100 0 ...C 0 50 0 50 0 0" /&gt;
+&lt;/svg&gt;
+            </code></pre>
+            <pre class="fragment"><code class="javascript" data-noescape>
+//javascript
+var paper = new Snap("#js-svg");
+var path = paper.select("#path1");
+path.animate({
+   d: "M 25,50 C 37.5,25 37.5,25 ... 12.5,75 12.5,75 25,50 Z"
+},1000);
+            </code></pre>
+        </section>
+
+        <section id="other-morphing" data-background-color="#2d6b94">
+            <div class="page__main-title page__main-title_rw"><a href="https://greensock.com/morphSVG" target="_blank">GreenSock MorphSVGPlugin</a></div><br>
+            <div class="page__main-title page__main-title_rw"><a href="http://alexk111.github.io/SVG-Morpheus/" target="_blank">SVG-Morpheus</a></div>
+        </section>
+
+        <section id="example_menu">
+            <nav id="menu" class="menu">
+                <div class="morph-shape" data-morph-open="M158.5,0H0v53.1c0,0,19.6-4.6,66-0.2s60.5-3.8,92.5-0.1V0z" data-morph-trans="M158.5,0H0v53.1c0,0,35.4,15.4,82,13.8s76.5-14.1,76.5-14.1V0z">
+                    <svg width="100%" height="100%" viewBox="0 0 158.5 61.2" preserveAspectRatio="none">
+                        <path id="js-svg-menu-path" fill="none" d="M158.5,0H0v55.6c20.9-12.8,38.5,19.5,73.5-1.9s73.2-7.2,85,0V0z" />
+                    </svg>
+                </div>
+                <button class="menu__label" id="js-menu"><i class="fa fa-fw fa-bars"></i><span>Open Menu</span></button>
+                <ul class="menu__inner" >
+                    <li><a href="#"><i class="fa fa-fw fa-bookmark-o"></i><span>Reading List</span></a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-hdd-o"></i><span>Saved Items</span></a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-image"></i><span>All Media</span></a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-heart-o"></i><span>Favorites</span></a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-envelope-o"></i><span>Messages</span></a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-bell-o"></i><span>Notifications</span></a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <!--END MORPHING-->
+
+
+
+
+
+        <!--BEGIN FOLLOW PATH-->
+
+        <section id="effect-title_followThePath">
+            <div class="effect-title__wrap">
+                <div class="effect-title__left"></div>
+                <div class="effect-title__name">FOLLOW THE PATH<span class="effect-title__sub-name">路径运动</span></div>
+            </div>
+        </section>
+
+        <section id="text-path">
+            <svg id="js-svg-text-path" xmlns="http://www.w3.org/2000/svg" width="960" viewBox="0 0 581 120">
+                <defs>
+                    <path
+                        d="M62.9 14.9c-25-7.74-56.6 4.8-60.4 24.3-3.73 19.6 21.6 35 39.6 37.6 42.8 6.2 72.9-53.4 116-58.9 65-18.2 191 101 215 28.8 5-16.7-7-49.1-34-44-34 11.5-31 46.5-14 69.3 9.38 12.6 24.2 20.6 39.8 22.9 91.4 9.05 102-98.9 176-86.7 18.8 3.81 33 17.3 36.7 34.6 2.01 10.2.124 21.1-5.18 30.1" id="text-p1"></path>
+                </defs>
+                <path  stroke="#0171bb"
+                    d="M62.9 14.9c-25-7.74-56.6 4.8-60.4 24.3-3.73 19.6 21.6 35 39.6 37.6 42.8 6.2 72.9-53.4 116-58.9 65-18.2 191 101 215 28.8 5-16.7-7-49.1-34-44-34 11.5-31 46.5-14 69.3 9.38 12.6 24.2 20.6 39.8 22.9 91.4 9.05 102-98.9 176-86.7 18.8 3.81 33 17.3 36.7 34.6 2.01 10.2.124 21.1-5.18 30.1" fill="none" stroke-width="0.3" stroke-dasharray="5 5"></path>
+                <text>
+                    <textPath xlink:href="#text-p1" class="svg__text-path" textLength="400"  startOffset="250">svg textPath元素可以让文字随着指定路径排列</textPath>
+                </text>
+            </svg>
+            <pre><code class="html" data-trim data-noescape>
+&lt;defs&gt;
+    &lt;path id="p1"
+    d="M62.9 14.9c-25-7.74-56.6 4.8-60.4 24.3-3.73 19.6 21.6..."&gt;
+    &lt;/path&gt;
+&lt;/defs&gt;
+
+&lt;text&gt;
+    &lt;textPath xlink:href="#p1" textLength="400"  startOffset="<span id="js-path-startOffset">250</span>"&gt;
+    svg textPath元素可以让文字随着指定路径排列
+    &lt;/textPath&gt;
+&lt;/text&gt;
+                </code></pre>
+</section>
+
+        <section id="SMIL" data-background-color="#306589">
+            <div class="page__main-title">SMIL</div>
+            <div class="fragment page__main-title">Snap.svg.js</div>
+        </section>
+
+        <section id="object-path" class="overflow-visible">
+            <svg id="js-svg-object-path-a" xmlns="http://www.w3.org/2000/svg" width="960" height="170" viewBox="0 0 620 120" preserveAspectRatio="xMidYMid meet">
+                <path class="svg__object-path" d="M62.9 14.9c-25-7.74-56.6 4.8-60.4 24.3-3.73 19.6 21.6 35 39.6 37.6 42.8 6.2 72.9-53.4 116-58.9 65-18.2 191 101 215 28.8 5-16.7-7-49.1-34-44-34 11.5-31 46.5-14 69.3 9.38 12.6 24.2 20.6 39.8 22.9 91.4 9.05 102-98.9 176-86.7 18.8 3.81 33 17.3 36.7 34.6 2.01 10.2.124 21.1-5.18 30.1" fill="none" stroke-width="0.5" stroke-dasharray="5 5"></path>
+                <circle class="svb__object-cicle" cx="62.9" cy="14.9" r="8" fill="#fe1d45" stroke-opacity="0.5" style="stroke-width: 2;"></circle>
+            </svg>
+            <pre><code class="javascript">
+    Snap.animate(0, followPath.length, function (val) {
+
+        //获取路径上相应长度点的信息
+        var movePoint = objectPath.path1.getPointAtLength(val);
+
+        //设定元素位置为相应点的坐标
+        objectPath.cicle.attr({
+            cx: movePoint.x,
+            cy: movePoint.y
+        });
+
+    }, mina.easeinout, 4500);
+            </code></pre>
+        </section>
+
+        <section id="plane-path" class="overflow-visible">
+            <svg id="js-svg-object-path-b" xmlns="http://www.w3.org/2000/svg" width="960" height="170" viewBox="0 0 620 120" preserveAspectRatio="xMidYMid meet">
+                <path class="svg__object-path" d="M62.9 14.9c-25-7.74-56.6 4.8-60.4 24.3-3.73 19.6 21.6 35 39.6 37.6 42.8 6.2 72.9-53.4 116-58.9 65-18.2 191 101 215 28.8 5-16.7-7-49.1-34-44-34 11.5-31 46.5-14 69.3 9.38 12.6 24.2 20.6 39.8 22.9 91.4 9.05 102-98.9 176-86.7 18.8 3.81 33 17.3 36.7 34.6 2.01 10.2.124 21.1-5.18 30.1" fill="none" stroke-width="0.5" stroke-dasharray="5 5"></path>
+                <g transform="matrix(0.2954,-0.9554,0.9554,0.2954,50.3742,21.4945)" class="svg__object-plane">
+                    <polyline points="0,20 10,0 20,20" fill="#fe1d45"></polyline>
+                </g>
+            </svg>
+            <pre><code class="javasript" data-noescape>
+                Element.getPointAtLength(length);
+
+                {
+                    x: x coordinate, //x坐标
+                    y: y coordinate, //y坐标
+                    alpha: angle of derivative //切线角度
+                }
+            </code></pre>
+        </section>
+
+        <!--BEGIN FOLLOW PATH-->
+
+
+
+
+        <!--BEGIN PATTERN-->
+
+        <section id="effect-title_pattern">
+            <div class="effect-title__wrap">
+                <div class="effect-title__left"></div>
+                <div class="effect-title__name">PATTERN<span class="effect-title__sub-name">图案填充</span></div>
+            </div>
+        </section>
+
+        <section id="pattern-intro" class="page__pattern-intro">
+            <pre><code class="html" data-noescape>
+    &lt;!--define patterns 定义图案--&gt;
+    &lt;defs&gt;
+        &lt;pattern id="ashano-EU" width="64" height="64"&gt;
+            &lt;path d="M50 50c0-5.523 4.477-10 10-10s17 10-10 10..." /&gt;
+        &lt;/pattern&gt;
+    &lt;/defs&gt;
+
+    &lt;rect width="100%" height="100%" fill="url(#ashano-EU)" /&gt;
+                </code></pre>
+        </section>
+
+
+        <section id="pattern-morphing" class="background"></section>
+
+        <section id="example__pattern-shine" class="background"></section>
+
+        <section id="pattern-text">
+            <svg xmlns='http://www.w3.org/2000/svg' width="960" height="280" viewBox="0 0 960 280">
+                <defs>
+                    <pattern id="waves" patternUnits="userSpaceOnUse" width="230.4" height="221.7" patternTransform="scale(.5)">
+                        <defs>
+                            <g id="wave" stroke="#0171bb" fill="none">
+                                <circle fill="#FFF" stroke-width="8" r="106.7" />
+                                <circle stroke-width="9" r="81" />
+                                <circle stroke-width="8" r="55.3" />
+                                <circle stroke-width="7" r="32.5" />
+                                <circle stroke-width="7" r="13.2" />
+                            </g>
+                        </defs>
+                        <use x="229.9" y="0.7" xlink:href="#wave" />
+                        <use x="114.9" y="55.3" xlink:href="#wave" />
+                        <use x="-114.9" y="55.3" xlink:href="#wave" />
+                        <use x="0" y="111.3" xlink:href="#wave" />
+                        <use x="229.9" y="111.3" xlink:href="#wave" />
+                        <use x="114.9" y="166.4" xlink:href="#wave" />
+                        <use x="-114.9" y="166.4" xlink:href="#wave" />
+                        <use x="0" y="222.2" xlink:href="#wave" />
+                        <use x="345.1" y="166.4" xlink:href="#wave" />
+                        <use x="229.9" y="222.2" xlink:href="#wave" />
+                        <use x="114.9" y="277.2" xlink:href="#wave" />
+                        <use x="-114.9" y="277.2" xlink:href="#wave" />
+                        <use x="345.1" y="277.2" xlink:href="#wave" />
+                    </pattern>
+                </defs>
+                <text x="480" y="140" fill="url(#shining)" class="svg__mytext">PATTERN</text>
+            </svg>
+        </section>
+
+        <!--END PATTERN-->
+
+
+
+        <!--BEGIN FILTER-->
+
+        <section id="effect-title_filter">
+            <div class="effect-title__wrap">
+                <div class="effect-title__left"></div>
+                <div class="effect-title__name">FILTER<span class="effect-title__sub-name">滤镜</span></div>
+            </div>
+        </section>
+        
+        <section>
+            <img src="../img/filter.jpg" width="100%">
+        </section>
+
+        <section id="filter-intro">
+
+            <pre><code class="html" data-trim data-noescape>
+&lt;svg xmlns="http://www.w3.org/2000/svg" version="1.1"&gt;
+    &lt;defs&gt;
+        &lt;filter id="filter-name"&gt;
+            ...
+            &lt;!-- insert filters here --&gt;
+            ...
+        &lt;/filter&gt;
+        ...
+    &lt;/defs&gt;
+&lt;/svg&gt;
+            </code></pre>
+            <pre class="ui-pt-50"><code class="hljs css" data-trim>
+.selector{
+    filter: url('#filter-name');
+    filter: url('filters.svg#filter-name');
+}
+            </code></pre>
+        </section>
+
+        <section id="filter-name" data-background-color="#306589">
+            <div class="page__attribute-title">SVG Filter</div>
+            <ul class="page__attribute-list">
+                <li>feOffset</li>
+                <li>feGaussianBlur</li>
+                <li>feBlend</li>
+                <li>feColorMatrix</li>
+                <li>feComponentTransfer</li>
+                <li>feComposite</li>
+                <li>feConvolveMatrix</li>
+                <li>feDiffuseLighting</li>
+                <li>feDisplacementMap</li>
+                <li>feFlood</li>
+                <li>feImage</li>
+                <li>feMerge</li>
+                <li>feMorphology</li>
+                <li>feSpecularLighting</li>
+                <li>feTile</li>
+                <li>feTurbulence</li>
+                <li>feDistantLight</li>
+                <li>fePointLight</li>
+                <li>...</li>
+            </ul>
+        </section>
+
+        <section id="filter-apply">
+            <pre><code class="html" data-noescape>
+&lt;filter id="drop-shadow"&gt;
+    &lt;feGaussianBlur in="SourceGraphic" stdDeviation="7" result="shadow" /&gt;
+    &lt;feOffset in="shadow" dx="3" dy="4" result="shadow" /&gt;
+                ...
+    &lt;feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0
+                0 0 0 0 0  0 0 0 0 0  0 0 0 0.6 0" result="shadow" /&gt;
+    &lt;feBlend in="SourceGraphic" in2="shadow" /&gt;
+&lt;/filter&gt;
+            </code></pre>
+        </section>
+
+        <section id="example__filter-text">
+            <div class="page__filter-text">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 100">
+                    <defs>
+                        <filter id="filter-1" filterUnits="userSpaceOnUse">
+                            <!-- COLORS -->
+                            <feFlood flood-color="#663300" result="COLOR-red" />‚
+                            <feFlood flood-color="#D7A500" result="COLOR-y" />
+                            <!-- COLORS END -->
+
+                            <!-- STRIPE FILL -->
+                            <feImage xlink:href="data:image/svg+xml;charset=utf-8,%3Csvg%20version%3D%221.1%22%20id%3D%22Untitled-Seite_x25_201%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%2210px%22%20height%3D%224px%22%3E%0A%3Crect%20fill%3D%22%239F6B00%22%20width%3D%2210%22%20height%3D%222%22%2F%3E%3C%2Fsvg%3E" x="0" y="0" width="10" height="4" result="STRIPE FILL_10"/>
+                            <feTile in="STRIPE FILL_10" result="STRIPE FILL_20"/>
+                            <feComposite operator="in" in="STRIPE FILL_20" in2="SourceAlpha" result="STRIPE FILL_30"/>
+                            <!-- STRIPE FILL END -->
+
+                            <!-- THIN BEVEL -->
+                            <feMorphology operator="dilate" radius="2" in="SourceAlpha" result="THIN-BEVEL_10" />
+                            <feComposite operator="out" in="THIN-BEVEL_10" in2="SourceAlpha" result="THIN-BEVEL_20"/>
+                            <feComposite operator="in" in="COLOR-y" in2="THIN-BEVEL_20" result="THIN-BEVEL_30" />
+                            <!-- THIN BEVEL END -->
+
+                            <!-- OUTER BEVEL -->
+                            <feConvolveMatrix order="8,8" divisor="1"
+                                              kernelMatrix="1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 " in="SourceGraphic" result="OUTER-BEVEL_10" />
+                            <feOffset dx="4" dy="4" in="OUTER-BEVEL_10" result="OUTER-BEVEL_20"/>
+                            <feComposite operator="in" in="COLOR-red" in2="OUTER-BEVEL_20" result="OUTER-BEVEL_30" />
+                            <!-- OUTER BEVEL END -->
+
+                            <!-- INNER BEVEL -->
+                            <feOffset in="SourceAlpha" dx="4" dy="4" result="INNER-BEVEL_10"/>
+                            <feComposite operator="out" in="SourceAlpha" in2="INNER-BEVEL_10" result="INNER-BEVEL_20" />
+                            <feComposite in="COLOR-red" operator="in" in2="INNER-BEVEL_20" result="INNER-BEVEL_30" />
+                            <!--  INNER BEVEL END -->
+
+                            <!-- FAT OUTLINE -->
+                            <feMorphology operator="dilate" radius="6" in="OUTER-BEVEL_30" result="FAT-OUTLINE_10" />
+                            <feComposite operator="in" in="COLOR-y" in2="FAT-OUTLINE_10" result="FAT-OUTLINE_20" />
+                            <!-- FAT OUTLINE END -->
+
+                            <feMerge  result="merge2">
+                                <feMergeNode in="FAT-OUTLINE_20" />
+                                <feMergeNode in="OUTER-BEVEL_30" />
+                                <feMergeNode in="STRIPE FILL_30" />
+                                <feMergeNode in="INNER-BEVEL_30" />
+                                <feMergeNode in="THIN-BEVEL_30" />
+                            </feMerge>
+                        </filter>
+                    </defs>
+
+                    <text class="filtered-1" x="20" y="85">Pansen!<text>
+                </svg>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 100">
+                    <defs>
+                        <filter id="filter-2">
+                            <feConvolveMatrix order="8,8" divisor="1"
+                                              kernelMatrix="1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 " in="SourceAlpha" result="BEVEL" />
+                            <feOffset dx="4" dy="4" in="BEVEL" result="OFFSET"/>
+
+                            <feMerge>
+                                <feMergeNode in="OFFSET" />
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <text class="filtered-2" x="20" y="85">Extruded</text>
+                </svg>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 100">
+
+                    <defs>
+                        <filter id="filter-3" filterUnits="userSpaceOnUse">
+                            <feImage xlink:href='data:image/svg+xml;charset=utf-8,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22100px%22%20height%3D%22200px%22%20%20%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3Cpattern%20id%3D%22pattern%22%20patternUnits%3D%22userSpaceOnUse%22%20width%3D%2210%22%20height%3D%2210%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M0%2C8.239V10h1.761L0%2C8.239z%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M5%2C0l5%2C5l0%2C0V3.238L6.762%2C0H5z%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%220%2C3.239%200%2C5%205%2C10%206.761%2C10%20%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%221.762%2C0%200%2C0%2010%2C10%2010%2C8.238%20%22%2F%3E%0A%20%20%20%20%3C%2Fpattern%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url%28%23pattern%29%22%20%2F%3E%0A%3C%2Fsvg%3E' x="0" y="0" width="100" height="200" result="IMAGEFILL"/>
+                            <feTile in="IMAGEFILL" result="TILEPATTERN"/>
+                            <feComposite operator="in" in="TILEPATTERN" in2="SourceAlpha" />
+                        </filter>
+                    </defs>
+                    <text class="filtered-3" x="20" y="95">STRIPES!</text>
+                </svg>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 100">
+                    <defs>
+                        <filter id="filter-4">
+                            <feFlood flood-color="#FF0000" flood-opacity="0.5" result="RED" />
+                            <feFlood flood-color="#00FF00" flood-opacity="0.5" result="GREEN" />
+                            <feFlood flood-color="#0000FF" flood-opacity="0.5" result="BLUE" />
+                            <feComposite operator="in" in="RED" in2="SourceAlpha" result="RED_TEXT"/>
+                            <feComposite operator="in" in="GREEN" in2="SourceAlpha" result="GREEN_TEXT"/>
+                            <feComposite operator="in" in="BLUE" in2="SourceAlpha" result="BLUE_TEXT"/>
+                            <feOffset in="RED_TEXT" dx="-15" dy="0" result="RED_TEXT_OFF"/>
+                            <feOffset in="GREEN_TEXT" dx="15" dy="0"  result="GREEN_TEXT_OFF"/>
+                            <feOffset in="BLUE_TEXT" dx="0" dy="0"  result="BLUE_TEXT_OFF"/>
+                            <feMerge>
+                                <feMergeNode in="RED_TEXT_OFF" />
+                                <feMergeNode in="GREEN_TEXT_OFF"/>
+                                <feMergeNode in="BLUE_TEXT_OFF"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <text class="filtered-4" x="20" y="85">Off Set.</text>
+                </svg>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 100">
+                    <defs>
+                        <filter id="filter-5">
+                            <feTurbulence result="TURBULENCE" baseFrequency="0.08" numOctaves="1" seed="1" />
+                            <feDisplacementMap in="SourceGraphic" in2="TURBULENCE" scale="9" />
+                        </filter>
+                    </defs>
+                    <text class="filtered-5" x="20" y="85">Torn Out</text>
+                </svg>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 100">
+                    <defs>
+                        <filter id="filter-6">
+                            <feMorphology in="SourceAlpha" operator="dilate" radius="2" result="OUTLINE" />
+                            <feComposite operator="out" in="OUTLINE" in2="SourceAlpha" />
+                        </filter>
+                    </defs>
+                    <text class="filtered-6" x="20" y="85">Outlined</text>
+                </svg>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 100">
+                    <defs>
+                        <filter id="filter-7">
+                            <feTurbulence type="fractalNoise" result="TURBULENCE" baseFrequency="0.1" numOctaves="5" seed="2" />
+                            <feComposite operator="in" in="TURBULENCE" in2="SourceAlpha" />
+                        </filter>
+                    </defs>
+                    <text class="filtered-7" x="20" y="85">Noizeee!</text>
+                </svg>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 100">
+                    <defs>
+                        <filter id="filter-8" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse">
+                            <feGaussianBlur stdDeviation="5" in="SourceAlpha" result="BLUR"/>
+
+                            <feSpecularLighting surfaceScale="6" specularConstant="1" specularExponent="30" lighting-color="#white" in="BLUR" result="SPECULAR">
+                                <fePointLight x="40" y="-30" z="200" />
+                            </feSpecularLighting>
+                            <feComposite operator="in" in="SPECULAR" in2="SourceAlpha" result="COMPOSITE"/>
+                            <feMerge>
+                                <feMergeNode in="SourceAlpha" />
+                                <feMergeNode in="COMPOSITE"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <text class="filtered-8" x="20" y="85">Beveled</text>
+                </svg>
+            </div>
+
+        </section>
+
+        <section id="filter-blur">
+            <div class="page__main-title page__main-title_tide">GaussianBlur</div>
+             <pre class="fragment"><code class="html" data-noescape>
+ &lt;defs&gt;
+    &lt;filter id="fuzzy"&gt;
+        &lt;feGaussianBlur in="SourceGraphic" <mark>stdDeviation="10,0"</mark>/&gt;
+    &lt;/filter&gt;
+ &lt;/defs&gt;
+            </code></pre>
+        </section>
+
+        <section id="filter-blur-affect">
+            <svg width="960" viewBox="0 0 1720 900">
+                <g transform="translate(864,480)">
+                    <defs>
+                        <filter class="exampleFilters" id="fuzzy-range-0" width="300%" x="-100%" color-interpolation-filters="sRGB">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="0,0"></feGaussianBlur>
+                        </filter>
+                        <filter class="exampleFilters" id="fuzzy-range-1" width="300%" x="-100%" color-interpolation-filters="sRGB">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="2,0"></feGaussianBlur>
+                        </filter>
+                        <filter class="exampleFilters" id="fuzzy-range-2" width="300%" x="-100%" color-interpolation-filters="sRGB">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="4,0"></feGaussianBlur>
+                        </filter>
+                        <filter class="exampleFilters" id="fuzzy-range-3" width="300%" x="-100%" color-interpolation-filters="sRGB">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="6,0"></feGaussianBlur>
+                        </filter>
+                        <filter class="exampleFilters" id="fuzzy-range-4" width="300%" x="-100%" color-interpolation-filters="sRGB">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="8,0"></feGaussianBlur>
+                        </filter>
+                        <filter class="exampleFilters" id="fuzzy-range-5" height="300%" y="-100%" color-interpolation-filters="sRGB">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="0,0"></feGaussianBlur>
+                        </filter>
+                        <filter class="exampleFilters" id="fuzzy-range-6" height="300%" y="-100%" color-interpolation-filters="sRGB">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="0,2"></feGaussianBlur>
+                        </filter>
+                        <filter class="exampleFilters" id="fuzzy-range-7" height="300%" y="-100%" color-interpolation-filters="sRGB">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="0,4"></feGaussianBlur>
+                        </filter>
+                        <filter class="exampleFilters" id="fuzzy-range-8" height="300%" y="-100%" color-interpolation-filters="sRGB">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="0,6"></feGaussianBlur>
+                        </filter>
+                        <filter class="exampleFilters" id="fuzzy-range-9" height="300%" y="-100%" color-interpolation-filters="sRGB">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="0,8"></feGaussianBlur>
+                        </filter>
+                    </defs>
+                    <g class="exampleCirclerWapper">
+                        <circle class="rangeExamples" cx = "-120" cy="-250" r="20" style="filter: url('#fuzzy-range-0');"></circle>
+                        <circle class="rangeExamples" cx = "-120" cy="-150" r="20" style="filter: url('#fuzzy-range-1');"></circle>
+                        <circle class="rangeExamples" cx = "-120" cy="-50" r="20" style="filter: url('#fuzzy-range-2');"></circle>
+                        <circle class="rangeExamples" cx = "-120" cy="50" r="20" style="filter: url('#fuzzy-range-3');"></circle>
+                        <circle class="rangeExamples" cx = "-120" cy="150" r="20" style="filter: url('#fuzzy-range-4');"></circle>
+                        <circle class="rangeExamples" cx = "120" cy="-250" r="20" style="filter: url('#fuzzy-range-5');"></circle>
+                        <circle class="rangeExamples" cx = "120" cy="-150" r="20" style="filter: url('#fuzzy-range-6');"></circle>
+                        <circle class="rangeExamples" cx = "120" cy="-50" r="20" style="filter: url('#fuzzy-range-7');"></circle>
+                        <circle class="rangeExamples" cx = "120" cy="50" r="20" style="filter: url('#fuzzy-range-8');"></circle>
+                        <circle class="rangeExamples" cx = "120" cy="150" r="20" style="filter: url('#fuzzy-range-9');"></circle>
+                    </g>
+                </g>
+            </svg>
+        </section>
+
+        <section id="example__filter-blur" class="page__filter-blur">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="filters hidden">
+                <defs>
+                    <filter id="blur">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="0,0" />
+                    </filter>
+                </defs>
+            </svg>
+            <div class="modal__content">
+                <div class="open-modal">Open Modal</div>
+            </div>
+            <div class="modal__overlay"></div>
+            <div class="modal__wrapper">
+                <div class="modal js-blur">
+                    <div class="close-modal">×</div>
+                    <h2>Tunguska event</h2>
+                    <p>Across the centuries venture another world, ship of the imagination, corpus callosum from which we spring, hydrogen atoms?</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="example__filter-blur2"></section>
+
+        <section id="example__blobs">
+            <div class="blobs" id="js-blobs">
+                <div class="blob">4</div>
+                <div class="blob">3</div>
+                <div class="blob">2</div>
+                <div class="blob">1</div>
+            </div>
+
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none">
+                <defs>
+                    <filter id="goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                        <feBlend in="SourceGraphic" in2="goo" />
+                    </filter>
+                </defs>
+            </svg>
+        </section>
+
+        <section id="filter-blob-resolve">
+            <img src="../img/blur-vs-contrast.png" style="vertical-align: middle" width="500"><img class="fragment" src="../img/blob.jpg" width="400" style="vertical-align: middle">
+
+        </section>
+
+        <section id="filter-blob-css">
+            <div class="css-blobs" id="js-css-blobs">
+                <div class="css-blobs__item"></div>
+                <div class="css-blobs__item"></div>
+            </div>
+            <div class="page__filter-blob-code fragment">
+                <pre><code class="html" data-noescape data-trim>
+&lt;defs&gt;
+    &lt;filter id="goo"&gt;
+        &lt;feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" /&gt;
+        &lt;feColorMatrix in="blur" mode="matrix" values="1 0 ... 18 -7" result="goo" /&gt;
+        &lt;feBlend in="SourceGraphic" in2="goo" /&gt;
+    &lt;/filter&gt;
+&lt;/defs&gt;
+                </code></pre>
+            </div>
+        </section>
+
+        <section id="example__more-blobs">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="800" class="hidden">
+                <defs>
+                    <filter id="goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                        <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                    </filter>
+                    <filter id="goo-no-comp">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                    </filter>
+                </defs>
+            </svg>
+            <div class="send__content">
+                <div class="send">
+                    <div class="send-indicator">
+                        <div class="send-indicator-dot"></div>
+                        <div class="send-indicator-dot"></div>
+                        <div class="send-indicator-dot"></div>
+                        <div class="send-indicator-dot"></div>
+                    </div>
+                    <div class="send-button">
+                        <div class="sent-bg"></div>
+                        <i class="fa fa-send send-icon"></i>
+                        <i class="fa fa-check sent-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--END FILTER-->
+
+        <section id="reference__list1" class="reference__list" data-background-color="#306589">
+            <div class="reference__list-head">参考资料</div>
+            <div class="reference__list-wrap">
+                <div class="reference__list-title">SVG基础知识</div>
+                <ul class="reference__list-content">
+                    <li>
+                        <a target="_blank" href="https://svgontheweb.com/zh/">SVG 应用指南</a><span>(中文)</span>
+                        <div class="reference__list-comment">篇幅不长,适合初学者了解SVG</div>
+
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.w3cplus.com/blog/tags/411.html">W3CPlus上的SVG专栏</a><span>(中文)</span>
+                        <div class="reference__list-comment">很多很好很新的译文</div>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://svgtrick.com/">SVG Trick</a><span>(中文)</span>
+                        <div class="reference__list-comment">SVG trick网站,专门收集一些svg的相关内容</div>
+                    </li>
+
+                    <li>
+                        <a target="_blank" href="http://svgpocketguide.com/book/">SVG Pocket Guide</a><span>(英文)</span>
+                        <div class="reference__list-comment">SVG 口袋书,介绍使用代码绘制svg图形的基本知识</div>
+
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://css-tricks.com/lodge/svg/">Everything You Need To Know About SVG</a><span>(英文)</span>
+                        <div class="reference__list-comment">css tricks上关于SVG内容比较全面的合集,可以选择性的阅读</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="reference__list-wrap">
+                <div class="reference__list-title">SVG动画综述</div>
+                <ul class="reference__list-content">
+                    <li>
+                        <a target="_blank" href="https://medium.com/@fmuaddib/the-following-are-the-possible-ways-to-create-professional-animations-in-svg-9d4caca5f4ec#.gs66v8ge1">The Art of SVG Animation</a><span>(英文)</span>
+                        <div class="reference__list-comment">综合介绍了SVG动画的几种方式和一些工具</div>
+
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://greensock.com/svg-tips">Animating SVG with GSAP</a><span>(英文)</span>
+                        <div class="reference__list-comment">使用GreenSock来制作SVG动画</div>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://davidwalsh.name/svg-animations-snap">SVG Animations Using CSS And Snap.svg</a><span>(英文)</span>
+                        <div class="reference__list-comment">使用Snap.svg.js和CSS来制作SVG动画</div>
+                    </li>
+                </ul>
+            </div>
+
+
+        </section>
+
+        <section id="reference__list2" class="reference__list" data-background-color="#306589">
+            <div class="reference__list-head">参考资料</div>
+            <div class="reference__list-wrap">
+                <div class="reference__list-title">SVG动画知识点</div>
+                <ul class="reference__list-content">
+                    <li>
+                        <a target="_blank" href="http://www.zhangxinxu.com/wordpress/2014/04/animateion-line-drawing-svg-path-%E5%8A%A8%E7%94%BB-%E8%B7%AF%E5%BE%84/">纯CSS实现帅气的SVG路径描边动画效果</a><span>(中文)</span>
+                        <div class="reference__list-comment">张鑫旭关于SVG描边动画的文章,直观易懂</div>
+
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://css-tricks.com/svg-shape-morphing-works/">How SVG Shape Morphing Works</a><span>(英文)</span>
+                        <div class="reference__list-comment">SVG变形动画的原理和实现</div>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://greensock.com/morphSVG">GreenSock MorphSVGPlus</a><span>(英文)</span>
+                        <div class="reference__list-comment">使用GreenSock插件实现SVG morphing动画</div>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://jonibologna.com/svg-text-along-a-path/">Animating SVG Text On A Path</a><span>(英文)</span>
+                        <div class="reference__list-comment">文字路径动画的知识</div>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://icanbecreative.com/article/animate-element-along-svg-path/">How To Animate Element Along SVG Path</a><span>(英文)</span>
+                        <div class="reference__list-comment">SVG 路径动画的具体实现</div>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.w3cplus.com/svg/svg-pattern-element.html">如何使用SVG图案</a><span>(中文)</span>
+                        <div class="reference__list-comment">关于SVG Pattern的译文</div>
+                    </li>
+
+
+                    <li>
+                        <a target="_blank" href="http://www.w3cplus.com/svg/why-the-svg-filter-is-awesome.html">SVG滤镜的艺术以及它为什么这么棒</a><span>(中文)</span>
+                        <div class="reference__list-comment">关于SVG 滤镜的译文</div>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://css-tricks.com/gooey-effect/">SVG Gooey Effect</a><span>(英文)</span>
+                        <div class="reference__list-comment">SVG Gooey效果的原理讲解</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="end" data-background-color="#306589">
+            <div class="page__end">
+                THANKS
+            </div>
+            <div class="page__end-desc">大家如果对Web动画感兴趣或者对我的PPT有什么疑问欢迎和我微信交流</div>
+            <div class="page__end-qr">
+                <img src="../img/qr.png">
+            </div>
+        </section>
+
+    </div>
+
+    <!--BEGIN reference-->
+
+    <div class="reference__wrap">
+        <div class="reference reference_line1">
+            <a href="http://codepen.io/metabolism/pen/wGopjQ" target="_blank">
+                Refer To Metabolism's Demo
+            </a>
+        </div>
+        <div class="reference reference_line2">
+            <a href="http://codepen.io/yoksel/pen/XJbzrO" target="_blank">
+                Refer To Yoksel's Demo
+            </a>
+        </div>
+        <div class="reference reference_menu">
+            <a href="http://codepen.io/jchoura/pen/yYeQdz" target="_blank">
+                Refer To  John Choura Jr.'s Demo
+            </a>
+        </div>
+        <div class="reference reference_pattern-shine">
+            <a href="http://codepen.io/yoksel/pen/VjZGGg" target="_blank">
+                Refer To Yoksel's Demo
+            </a>
+        </div>
+        <div class="reference reference_filter-text">
+            <a href="https://www.smashingmagazine.com/2015/05/why-the-svg-filter-is-awesome/" target="_blank">
+                Refer To Dirk Weber's Article
+            </a>
+        </div>
+        <div class="reference reference_blobs">
+            <a href="http://codepen.io/lbebber/pen/OPjxZL" target="_blank">
+                Refer To Lucas Bebber's Demo
+            </a>
+        </div>
+        <div class="reference reference_filter-blur">
+            <a href="http://tympanus.net/codrops/2015/04/08/motion-blur-effect-svg/" target="_blank">
+                Refer To Lucas Bebber's Demo
+            </a>
+        </div>
+        <div class="reference reference_filter-blur2">
+            <a href="http://tympanus.net/codrops/2015/04/08/motion-blur-effect-svg/" target="_blank">
+                Refer To Lucas Bebber's Demo
+            </a>
+        </div>
+        <div class="reference reference_more-blobs">
+            <a href="https://tympanus.net/codrops/2015/03/10/creative-gooey-effects/" target="_blank">
+                Refer To Lucas Bebber's Demo
+            </a>
+        </div>
+    </div>
+
+    <!--END reference-->
+
+
+
+</div>
+
+<script src="../js/index.js"></script>
+
+<script>
+
+
+    Reveal.initialize({
+        controls: false,
+        history: true,
+        dependencies: [
+            {
+                src: '../js/plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            }
+        ]
+    });
+
+
+
+</script>
+
+</body>
+</html>
+<body>
+
+</body>
+</html>
