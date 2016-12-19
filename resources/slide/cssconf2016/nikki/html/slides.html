@@ -144,7 +144,7 @@
             <svg id="js-svg-cover" class="svg__cover"></svg>
 
             <div class="cover__sub" style="display: block;">
-                请在chorome浏览器  ( 以及mac ) 下体验 --
+                请在chrome浏览器  ( 以及mac ) 下获得最佳体验 --
                 <span>方潇仪</span>
             </div>
         </section>
@@ -1210,13 +1210,27 @@ path.animate({
 
 </div>
 
-<script src="../js/index.js"></script>
+<!-- build:js ../js/index.js -->
+<script src="../js/svgLineDrawing.js"></script>
+<script src="../js/config.js"></script>
+<script src="../js/util.js"></script>
+<script src="../js/cover.js"></script>
+<script src="../js/line-control.js"></script>
+<script src="../js/morphing.js"></script>
+<script src="../js/path.js"></script>
+<script src="../js/pattern.js"></script>
+<script src="../js/motionblur.js"></script>
+<script src="../js/gallery.js"></script>
+<script src="../js/modal.js"></script>
+<script src="../js/send.js"></script>
+<script src="../js/event.js"></script>
+<!-- endbuild -->
 
 <script>
 
 
     Reveal.initialize({
-        controls: false,
+        controls: true,
         history: true,
         dependencies: [
             {
