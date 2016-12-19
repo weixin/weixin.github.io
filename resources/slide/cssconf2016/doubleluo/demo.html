@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/svg.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+			.svgtestcss div{
+				float:left;
+			}
+		</style>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>花10分钟在我们的项目中使用SVG</h1>
+					<p>
+						<small>Created by doubleluo（大菠萝）</small>
+					</p>
+				</section>
+				<section>
+					<section>
+						<h2>切图仔的日常</h2>
+					</section>
+					<section>
+						<p>
+							大部分时间在切一张又一张的设计图
+						</p>
+					</section>
+					<section>
+						<p>
+							嫌弃这件事没有技术含量
+						</p>
+					</section>
+					<section>
+						<p>
+							却发现写了5000.00行代码</p>
+							<p>优化了又优化</p>
+							<p>还不如一张背景图大
+						</p>
+					</section>
+					<section>
+						<p>
+							网站中60%以上的流量是被切图占据了
+						</p>
+						<small style="color:rgba(255,255,255,0.3)">//假装调研过的数据</small>
+					</section>
+				</section>
+				<section>
+					<section>
+						<p>IE6时代</p>
+						<p>我们用png8来实现透明底色</p>
+						<p>现在我们换成了png24</p>
+						<p>颜色变成了256的三次方</p>
+					</section>
+					<section>
+						<p>我们用二倍图三倍图来适应分辨率越来越高的屏幕</p>
+						<p>但是本质却没有改变</p>
+					</section>
+					<section>
+						<p>webP更高的压缩率和动画</p>
+						<p><img src="./img/1.png"></p>
+						<p>很好的方案，可是只有Chrome自娱自乐</p>
+					</section>
+					<section>
+						<p>iconfont一度极其流行</p>
+						<p>但毕竟我们的世界没办法只有单一色彩</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>所以我们期待着什么</h2>
+					</section>
+					<section>
+						<p>色彩靓</p>
+						<p>质量高</p>
+						<p>压缩率</p>
+						<p>可以生动的动起来</p>
+					</section>
+					<section>
+						又要牛儿跑 又要牛儿不吃草
+					</section>
+				</section>
+				<section>
+					<h2>Scalable Vector Graphics</h2>
+					<p>
+						可伸缩矢量图形
+					</p>
+				</section>
+				<section>
+					<section>
+						<h2>其实好东西一直在我们身边</h2>
+						<p><small>那些年错过的女孩 </small></p>
+						<p><small>#2001年9月4日，发布SVG 1.0</small></p>
+						<p><small>#2011年IE9发布 正式完整支持SVG</small></p>
+					</section>
+					<section>
+						<p>SVG中的概念和标签相当于一套新的HTML</p>
+					</section>
+					<section>
+						<p>PS没有导出SVG功能</p>
+						<p>没有预期用了SVG会怎么样</p>
+					</section>
+					<section>
+						<p>所以我们一直敬而远之</p>
+					</section>
+				</section>
+				<section>
+					<section>
+					<h2>掀起你的盖头来</h2>
+					<svg style="width:400px;height:400px;" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" width="53" height="53" viewBox="0 0 53 53">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffffc5;
+        stroke: #af7925;
+        stroke-linejoin: round;
+        stroke-width: 1px;
+        filter: url(#filter-chain-1);
+        fill-rule: evenodd;
+      }
+    </style>
+
+    <filter id="filter-chain-1" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="6" in="SourceAlpha"/>
+      <feComposite/>
+      <feComposite/>
+      <feComposite result="outerGlowBlur"/>
+      <feFlood flood-color="#ecc055" flood-opacity="0.6"/>
+      <feComposite operator="in" in2="outerGlowBlur"/>
+      <feBlend mode="screen" in2="SourceGraphic" result="outerGlow"/>
+      <feComposite in="SourceGraphic" result="shadowed"/>
+      <feFlood flood-color="#e2d379"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+      <feBlend in2="shadowed" result="solidFill"/>
+    </filter>
+  </defs>
+  <g style="fill: #ffffc5; filter: url(#filter-chain-1)">
+    <path d="M26.539,20.367 L28.020,24.927 L32.585,25.053 L28.933,27.992 L30.191,32.628 L26.453,29.884 L22.666,32.623 L24.008,27.989 L20.409,25.045 L24.976,24.925 L26.539,20.367 Z" id="path-1" style="stroke: inherit; filter: none; fill: inherit" class="cls-1"/>
+  </g>
+  <use xlink:href="#path-1" style="stroke: #af7925; filter: none; fill: none"/>
+</svg>
+					</section>
+					<section>
+					<h2>viewBox</h2>
+<svg id="viewbox" style="border:1px solid red;float:left;width:530px;height:530px;"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 53 53">
+  <g style="fill: #ffffc5;">
+    <path d="M26.539,20.367 L28.020,24.927 L32.585,25.053 L28.933,27.992 L30.191,32.628 L26.453,29.884 L22.666,32.623 L24.008,27.989 L20.409,25.045 L24.976,24.925 L26.539,20.367 Z" id="path-1" style="stroke: inherit; filter: none; fill: inherit" />
+  </g>
+</svg>
+<div style="float:right">
+	<p id="viewboxS">viewBox="0 0 53 53"</p>
+<p id="widthHeightS">width:530px;height:530px;</p>
+</div>
+
+<div>
+<button id="viewboxB" style="height:60px;">ViewBox 大小</button>
+<button id="viewboxC" style="height:60px;">ViewBox 坐标系</button>
+<button id="widthHeight" style="height:60px;">Width+Height</button>
+</div>
+					</section>
+<script type="text/javascript">
+var a = false;
+document.getElementById('viewboxB').onclick = function(){
+	if(a){
+		document.getElementById('viewboxS').innerHTML = 'viewBox="0 0 53 53"';
+		document.getElementById('viewbox').setAttribute('viewBox','0 0 53 53');
+		a = false;
+	}else{
+		document.getElementById('viewboxS').innerHTML = 'viewBox="0 0 530 530"';
+		a = true;
+		document.getElementById('viewbox').setAttribute('viewBox','0 0 530 530');
+	}
+}
+document.getElementById('viewboxC').onclick = function(){
+	var a = 0;
+	var t = setInterval(function(){
+		a++;
+		document.getElementById('viewboxS').innerHTML = 'viewBox="'+a+' '+a+' 53 53"';
+		document.getElementById('viewbox').setAttribute('viewBox',a+' '+a+' 53 53');
+		if(a == 30){
+			clearInterval(t);
+			a = 0;
+			document.getElementById('viewboxS').innerHTML = 'viewBox="'+a+' '+a+' 53 53"';
+		document.getElementById('viewbox').setAttribute('viewBox',a+' '+a+' 53 53');
+		}
+	},200)
+}
+var b = false;
+document.getElementById('widthHeight').onclick = function(){
+	if(b){
+		document.getElementById('widthHeightS').innerHTML = 'width:530px;height:530px;'
+		document.getElementById('viewbox').style.width = '530' + 'px';
+		document.getElementById('viewbox').style.height = '530' + 'px';
+		
+		b = false;
+	}else{
+		b = true;
+		document.getElementById('widthHeightS').innerHTML = 'width:53px;height:53px;'
+		document.getElementById('viewbox').style.width = '53' + 'px';
+		document.getElementById('viewbox').style.height = '53' + 'px';
+	}
+}
+</script>
+										<section>
+	<h3>use的使用</h3>
+
+<svg id="svggg" style="width:230px;height:230px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="53" height="53" viewBox="0 0 53 53">
+  <path style="fill: #ffffc5;stroke: inherit; filter: none;" d="M26.539,20.367 L28.020,24.927 L32.585,25.053 L28.933,27.992 L30.191,32.628 L26.453,29.884 L22.666,32.623 
+L24.008,27.989 L20.409,25.045 L24.976,24.925 L26.539,20.367 Z" id="path-1" ></path>
+<use id="svga" xlink:href="#path-1" style="stroke: #af7925; 
+filter: none; fill: none"></use>
+</svg>
+<div>
+<button id="USEb" style="height:60px;">删除USE</button>
+<button id="USEa" style="height:60px;">增加USE</button>
+</div>
+
+<script type="text/javascript">
+	document.getElementById('USEa').onclick =function(){
+		var chil = document.createElement('use');
+		chil.setAttribute('xlink:href','#path-1');
+		chil.style.filter = 'none';
+		chil.style.stroke = 'red';
+		chil.style.fill = 'red';
+		document.getElementById('svggg').appendChild(chil);
+	}
+	document.getElementById('USEb').onclick =function(){
+		var chil = document.createElement('use');
+		chil.setAttribute('xlink:href','#path-1');
+		chil.style.filter = 'none';
+		chil.style.stroke = 'red';
+		chil.style.fill = 'red';
+		var t = document.getElementById('svga');
+		t.parentNode.removeChild(t);
+	}
+</script>
+<div>
+	<pre>
+		<code class="hljs">
+<path style="fill: #ffffc5;stroke: #af7925; 
+filter: none;" d="M26.539,20.367..." id="path-1" ></path>
+<use xlink:href="#path-1"
+style="stroke: #af7925; 
+filter: none; fill: none"></use>
+		</code>
+	</pre>
+</div>
+					</section>
+<section>
+<h2>class及filter</h2>
+<svg style="width:200px;height:200px;" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" width="53" height="53" viewBox="0 0 53 53">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffffc5;
+        stroke: #af7925;
+        stroke-linejoin: round;
+        stroke-width: 1px;
+        filter: url(#filter-chain-1);
+        fill-rule: evenodd;
+      }
+    </style>
+    <filter id="filter-chain-1" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="6" in="SourceAlpha"/>
+      <feComposite/>
+      <feComposite/>
+      <feComposite result="outerGlowBlur"/>
+      <feFlood flood-color="#ecc055" flood-opacity="0.6"/>
+      <feComposite operator="in" in2="outerGlowBlur"/>
+      <feBlend mode="screen" in2="SourceGraphic" result="outerGlow"/>
+      <feComposite in="SourceGraphic" result="shadowed"/>
+      <feFlood flood-color="#e2d379"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+      <feBlend in2="shadowed" result="solidFill"/>
+    </filter>
+  </defs>
+  <g style="fill: #ffffc5; filter: url(#filter-chain-1)">
+    <path d="M26.539,20.367 L28.020,24.927 L32.585,25.053 L28.933,27.992 L30.191,32.628 L26.453,29.884 L22.666,32.623 L24.008,27.989 L20.409,25.045 L24.976,24.925 L26.539,20.367 Z" id="path-1" style="stroke: inherit; filter: none; fill: inherit" class="cls-1"/>
+  </g>
+  <use xlink:href="#path-1" style="stroke: #af7925; filter: none; fill: none"/>
+</svg>
+<pre>
+	<code>
+<defs>
+<style>
+  .cls-1 {
+    fill: #ffffc5;
+    stroke: #af7925;
+    stroke-linejoin: round;
+    stroke-width: 1px;
+    filter: url(#filter-chain-1);
+    fill-rule: evenodd;
+  }
+</style>
+
+<filter id="filter-chain-1" filterUnits="userSpaceOnUse">
+  <feGaussianBlur stdDeviation="6" in="SourceAlpha"/>
+  <feComposite/>
+  <feComposite/>
+  <feComposite result="outerGlowBlur"/>
+  <feFlood flood-color="#ecc055" flood-opacity="0.6"/>
+  <feComposite operator="in" in2="outerGlowBlur"/>
+  <feBlend mode="screen" in2="SourceGraphic" result="outerGlow"/>
+  <feComposite in="SourceGraphic" result="shadowed"/>
+  <feFlood flood-color="#e2d379"/>
+  <feComposite operator="in" in2="SourceGraphic"/>
+  <feBlend in2="shadowed" result="solidFill"/>
+</filter>
+</defs>
+	</code>
+</pre>
+</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>设计师的配合</h2>
+					</section>
+					<section>
+						<img style="width:100px;height:100px;" src="./img/6.png">
+						<p>位图  矢量图  智能对象</p>
+						<a href="http://hackingui.com/design/export-photoshop-layer-to-svg/">ps插件 导出SVG</a>
+					</section>
+					<section>
+						<img style="width:100px;height:100px;" src="./img/7.png">
+						<span style="vertical-align: 50px;">VS</span>
+						<img style="width:100px;height:100px;" src="./img/8.png">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<p>懒惰使人进步</p>
+						<div>
+							<pre><code class="hljs">
+.svg{
+	background-image: url(svg.svg);
+}
+								</code>
+							</pre>
+						</div>
+					</section>
+					<section>
+							<p>自动添加宽高</p>
+						<div>
+						<pre><code class="hljs">
+.png{
+	width: 40px;
+	height: 40px;
+	background-image: url(png.png);
+	@media query(min-device-pixel-ratio: 3){
+		background-image: url(png@3x.png);
+		background-size: 40px 40px;
+	}
+}
+
+								</code>
+							</pre>
+						</div>
+						<div>
+					<pre><code class="hljs">
+.svg{
+	width: 40px;
+	height: 40px;
+	background-image:url(svg.svg);
+}
+								</code>
+							</pre>
+						</div>
+					</section>
+
+					<section>
+						<p>减少请求</p>
+						<div>
+						<p>base64 354字符 增加45%</p>
+							<pre>
+								<code class="hljs">
+.svg{
+	width: 40px;
+	height: 40px;
+	background-image: url(data:image/svg+xml;
+	base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy
+	53My5vcmcvMjAwMC9zdmciIHdpZHRoP
+	SIyIiBoZWlnaHQ9IjQ1OCIgdmlld0JveD0iM
+	CAwIDIgNDU4Ij4gIDxwb2x5bGluZSBmaWxs
+	PSJub25lIiBzdHJva2U9IiM5Nzk3OTciIHBvaW5
+	0cz0iMS4zNDQgLjQ2OSAxLjM0NCA1OS43ODEgMS4
+	zNDQgMjYxLjQzOCAxLjM0NCAzNzQuMTI1IDEuMzQ0IDQ
+	wOS42ODggMS4zNDQgNDI3LjUgMS4zNDQgNDUxLjI
+	xOSAxLjM0NCA0NTcuMTU2Ii8+PC9zdmc+);
+}
+								</code>
+							</pre>
+						</div>
+					</section>
+					<section>
+					<div>
+						<p>简易版urlencode 280字符 增加14%</p>
+						<pre>
+							<code class="hljs">
+.svg{
+	width: 40px;
+	height: 40px;
+	background-image: url("data:image/svg+xml,%3Csvg 
+	xmlns='http://www.w3.org/2000/svg' width='2' 
+	height='458' viewBox='0 0 2 458'%3E %3Cpolyline 
+	fill='none' stroke='%23979797' points='1.344 .469 
+	1.344 59.781 1.344 261.438 1.344 374.125 1.344 
+	409.688 1.344 427.5 1.344 451.219 1.344 457.156'/
+	%3E %3C/svg%3E ");
+}
+							</code>
+						</pre>
+					</div>
+					</section>
+					<section>
+						<p>解决了和REM同时使用的一个大坑</p>
+						<img src="./img/2.png" alt="">
+					</section>
+						<section>
+						<pre>
+							<code class="hljs">
+.png{
+	width: 56px;
+	height: 56px;
+	background-image: url(spirte@2x.png);
+	background-position: 10px 10px;
+	background-size: 56px 56px;
+}
+							</code>
+						</pre>
+						<pre>
+							<code class="hljs">
+.png{
+	width: 1.75rem;
+	height: 1.75rem;
+	background-image: url(spirte@2x.png);
+	background-position: 10px 10px;
+	background-size: 1.75rem 1.75rem;
+}
+							</code>
+						</pre>
+						</section>
+						<section>
+						 	<p>1.75rem换算表</p>
+							<table>
+<thead>
+<tr>
+<th>代表机型</th>
+<th>浏览器宽</th>
+<th>对应尺寸</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iPhone 4/4s/5/5s</td>
+<td>320px</td>
+<td>56px</td>
+</tr>
+<tr>
+<td>iPhone 6</td>
+<td>375px</td>
+<td>65.625px</td>
+</tr>
+<tr>
+<td>Google Nexus 6</td>
+<td>412px</td>
+<td>72.1px</td>
+</tr>
+<tr>
+<td>iPhone 6 Plus</td>
+<td>414px</td>
+<td>72.45px</td>
+</tr>
+</tbody>
+</table>
+					</section>
+					<section>
+<pre>
+	<code>
+.svg{
+	width: 1.75rem;
+	height: 1.75rem;
+	background-size: 100% 100%;
+	background-image: url(../img/img.svg);
+}
+	</code>
+</pre>
+
+					</section>
+					<section>
+						<h2>兼容性</h2>
+						<img src="./img/9.png">
+					</section>
+					<section>
+						<h2>最终</h2>
+						<pre>
+							<code class="hljs">
+.svg{
+	background-image: url(../img/img.svg);
+}
+							</code>
+						</pre>
+						<pre>
+							<code class="hljs">
+.svg{
+	width: 1.75rem;
+	height: 1.75rem;
+	background-size: 100% 100%;
+	background-image: url(../img/img.png);
+	background-image: url("data:image/svg+xml,%3Csvg width='40' height='36' 
+	viewBox='0 0 40 36' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300B000' 
+	fill-rule='evenodd'%3E%3Cpath d='...' stroke='%2300B000' 
+	M31.4 17.476h2.564v-1.617H31.4z'/%3E%3C/g%3E%3C/svg%3E")
+	,none;
+}
+</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>压缩与性能</h2>
+						<small>搞这些事情 ，值么</small>
+					</section>
+					<section>
+						<div class="svgtestcss">
+							<p>239个icon</p>
+							<div class=a703593768418020500></div><div class=a444516362142437500></div><div class=a7051568593419197000></div><div class=a8778670176396182000></div><div class=a8184437887310363000></div><div class=a59850271126951070></div><div class=a9715375748244195000></div><div class=a2753716130739261000></div><div class=a9620393120182071000></div><div class=a2367326566888172500></div><div class=a5650165340393552000></div><div class=a4175728430692529000></div><div class=a6099434190492841000></div><div class=a8950745529430832000></div><div class=a5052500675651812000></div><div class=a8579003499228151000></div><div class=a7292098263322839000></div><div class=a9296659147109590000></div><div class=a4243010165616450000></div><div class=a3544790619885221000></div><div class=a5643541079609262000></div><div class=a5214388030545112000></div><div class=a9833191580774710000></div><div class=a9217907722000798000></div><div class=a7697640721023855000></div><div class=a5458851105248835000></div><div class=a9373375413416573000></div><div class=a8493109391001871000></div><div class=a5662867841270605000></div><div class=a6276915139871518000></div><div class=a9137084029332647000></div><div class=a3731486684495561700></div><div class=a4273289498700901000></div><div class=a1706001914536328200></div><div class=a1853517195608924700></div><div class=a6125536749595876000></div><div class=a3708044689781218000></div><div class=a8482340457441107000></div><div class=a8974551472459036000></div><div class=a2985167204865955000></div><div class=a2658836675093605400></div><div class=a4932302860692317000></div><div class=a6560999818196793000></div><div class=a3101384355117900000></div><div class=a241606674962462370></div><div class=a6613577550009895000></div><div class=a7593493325130209000></div><div class=a1306610058300243700></div><div class=a5552172423162951000></div><div class=a4725802029330101000></div><div class=a2794559814078432000></div><div class=a1370574346225022000></div><div class=a890136641294749800></div><div class=a6665212169995445000></div><div class=a6954088053823976000></div><div class=a703751969019492600></div><div class=a1946287510954709500></div><div class=a740564480570924400></div><div class=a4217945909806870500></div><div class=a4838236721012346000></div><div class=a9837777489913694000></div><div class=a933732497092791800></div><div class=a2612451161540044000></div><div class=a5561509270562443000></div><div class=a9198463098924385000></div><div class=a7778434026376934000></div><div class=a1583821499476445400></div><div class=a9091675031365656000></div><div class=a4939086735073075000></div><div class=a9443499607185668000></div><div class=a5606932773795406000></div><div class=a7029984027879246000></div><div class=a4228107069493250000></div><div class=a282701043879469700></div><div class=a9664372966405605000></div><div class=a3014939580816797700></div><div class=a180403818225201020></div><div class=a400584438197322240></div><div class=a7291661676373431000></div><div class=a7292255092761331000></div><div class=a1601062232868366600></div><div class=a9921202131419800000></div><div class=a7521627027267615000></div><div class=a391024674244324600></div><div class=a4442804800439359500></div><div class=a7495684372940041000></div><div class=a2796213682333628000></div><div class=a1570571509050451200></div><div class=a9100875876699454000></div><div class=a7698277279369700000></div><div class=a7760144667186342000></div><div class=a3610686801037976600></div><div class=a9150273401570544000></div><div class=a5607202070452159000></div><div class=a7688906032509435000></div><div class=a8739711983042382000></div><div class=a9005657686308457000></div><div class=a2318139918254085000></div><div class=a7266573374624108000></div><div class=a3893872677822945000></div><div class=a373961787706631500></div><div class=a5350411074214411000></div><div class=a7905856098073967000></div><div class=a7051370259217143000></div><div class=a645373663556729700></div><div class=a4091092412817190000></div><div class=a2357678812514327600></div><div class=a1446945851752057300></div><div class=a2318531688453689000></div><div class=a6026113585701620000></div><div class=a6998577284160230000></div><div class=a6611325197805853000></div><div class=a6953068667172253000></div><div class=a3151897454415006700></div><div class=a157857369235521180></div><div class=a1029000965757365100></div><div class=a5047952389135146000></div><div class=a4776569504324566000></div><div class=a3722532141479941600></div><div class=a747631288042860400></div><div class=a3075245172702314500></div><div class=a2066405913253785900></div><div class=a9291337492605809000></div><div class=a7087728972822900000></div><div class=a8082575812043999000></div><div class=a6863461026435893000></div><div class=a5374262612749363000></div><div class=a5202129400134872000></div><div class=a9951374545989143000></div><div class=a1629729798650507800></div><div class=a6381484970113269000></div><div class=a1201941497377516500></div><div class=a1059001235227161600></div><div class=a3993734785748328400></div><div class=a6283829897821187000></div><div class=a6818850550547702000></div><div class=a4799223451407648000></div><div class=a7310943512854957000></div><div class=a5087573841746222000></div><div class=a189457856837325100></div><div class=a1039609126057337000></div><div class=a2994574039427324400></div><div class=a3733946294061130000></div><div class=a8338213799851646000></div><div class=a3833752782389559000></div><div class=a2092419463119641300></div><div class=a2917245318078378500></div><div class=a6901573992809944000></div><div class=a6473455731292315000></div><div class=a5903487974338053000></div><div class=a5508205442773694000></div><div class=a6272120114463999000></div><div class=a3299991187061182000></div><div class=a1918588304638366700></div><div class=a606417290678293900></div><div class=a4229835924342766600></div><div class=a44021255114534696></div><div class=a6438801365492946000></div><div class=a1352360836253145900></div><div class=a1056201006952226600></div><div class=a5899086774896360000></div><div class=a4417875945182323700></div><div class=a6851379892984666000></div><div class=a3084043010976509400></div><div class=a2651706484675553300></div><div class=a3503501544713179000></div><div class=a4713001387540785000></div><div class=a1098297818587126100></div><div class=a1729310099349594600></div><div class=a2286783240632865800></div><div class=a3570685462872071700></div><div class=a1197594410370315000></div><div class=a9119389182017792000></div><div class=a6610433896990318000></div><div class=a5427124893424955000></div><div class=a7104162367251577000></div><div class=a4198422733872688600></div><div class=a6323596033926833000></div><div class=a6590164099478226000></div><div class=a6428637035729456000></div><div class=a9703737137310235000></div><div class=a6944468439398832000></div><div class=a5726834071078302000></div><div class=a8094763646393432000></div><div class=a9439497925339576000></div><div class=a6994996728793832000></div><div class=a4226756804367279600></div><div class=a4106333323370705400></div><div class=a7838191119029256000></div><div class=a1262819473793577200></div><div class=a5930870456948780000></div><div class=a6934622339456746000></div><div class=a4083092601208284700></div><div class=a3334204697702330000></div><div class=a8651786947242180000></div><div class=a3147650614193093600></div><div class=a9884821728782735000></div><div class=a473495275171989000></div><div class=a9641694029973334000></div><div class=a9403647185914784000></div><div class=a266938181068621120></div><div class=a3715626878501423600></div><div class=a3400797826105939000></div><div class=a2128153650228545800></div><div class=a1185234991216819200></div><div class=a3594102205229057000></div><div class=a6239161964264650000></div><div class=a4107186955659820500></div><div class=a7112809325916245000></div><div class=a3958683998574137300></div><div class=a1620854678791354600></div><div class=a1321212774419922000></div><div class=a9723141192933728000></div><div class=a1938283862464096300></div><div class=a8798005104596791000></div><div class=a6563812229881598000></div><div class=a6863382781030166000></div><div class=a3791737899768675000></div><div class=a3687698926960925000></div><div class=a3991442134455225300></div><div class=a1800605825764232200></div><div class=a8812294139271819000></div><div class=a6796030968155427000></div><div class=a3128601871200753700></div><div class=a3315473369414881000></div><div class=a3814298368679125500></div><div class=a4873071403862870000></div><div class=a7830129043915317000></div><div class=a503998122070139500></div><div class=a3501986455539854000></div><div class=a5345668551939209000></div><div class=a7800903737375871000></div><div class=a8784520445931210000></div><div class=a2408749020616987000></div><div class=a8572806743908842000></div><div class=a2215357552913914600></div><div class=a8294300389628524000></div><div class=a8899183026653498000></div><div class=a1241138825576011500></div>
+						</div>
+					</section>
+					<section>
+						<p><img style="margin-top:10px;" src="./img/5.png"></p>
+						
+					</section>
+					<section>
+						<h3>PNG@3x</h3>
+						<p style="color:red;">578KB</p>
+						<img style="width:640px;" src="./img/3.png" alt="">
+					</section>
+					<section>
+						<h3>SVG</h3>
+						<p style="color:red;">274KB</p>
+						<img style="width:640px;"  src="./img/4.png" alt="">
+					</section>
+				</section>
+				<section>
+					是时候了，全面替换多倍图切图方案为SVG
+				</section>
+				<section>
+					<section>
+						<h2>
+							不止是当背景
+						</h2>
+					</section>
+					<section>
+					<img style="width:200px" src="./img/12.png">
+					<img style="width:200px" src="./img/10.png">
+					<img style="width:200px" src="./img/11.png">
+					</section>
+					<section>
+						<p>一个icon可能承担三四种状态</p>
+						<style type="text/css">
+						.red path,.red use{fill:red;}
+						.green path,.green use{fill:green;}
+						.orange path,.orange use{fill:orange;}
+						.gray path,.gray use{fill:gray;}
+						</style>
+<svg style="width:80px;height:80px;" class="red" width="21" height="22" viewBox="0 0 21 22" xmlns="http://www.w3.org/2000/svg"><use xlink:href="./img/a.svg#ttt"/></svg>
+<svg style="width:80px;height:80px;" class="green" width="21" height="22" viewBox="0 0 21 22" xmlns="http://www.w3.org/2000/svg"><use xlink:href="./img/a.svg#ttt"/></svg>
+<svg style="width:80px;height:80px;" class="orange" width="21" height="22" viewBox="0 0 21 22" xmlns="http://www.w3.org/2000/svg"><use xlink:href="./img/a.svg#ttt"/></svg>
+<svg style="width:80px;height:80px;" class="gray" width="21" height="22" viewBox="0 0 21 22" xmlns="http://www.w3.org/2000/svg"><use xlink:href="./img/a.svg#ttt"/></svg>
+					</section>
+					<section>
+						<p>不同的城市会有固定的几个icon相同</p>
+						<p>但有更多的icon不同</p>
+					</section>
+					<section>
+						<p>尽量利用缓存</p>
+						<p>
+							<pre>
+	<code>
+.red path,.red use{
+	fill:red;
+}
+
+<svg class="gray" width="21" height="22"
+viewBox="0 0 21 22" xmlns="http://www.w3.org/2000/svg">
+<use xlink:href="./img/a.svg#ttt"/>
+</svg>
+	</code>
+</pre>
+						</p>
+					</section>
+					<section>
+<pre>
+	<code>
+<body>
+<img src="./img/a.svg?i">
+<img src="./img/a.svg?c">
+</body>
+	</code>
+</pre>
+					</section>
+				</section>
+
+				<section>
+
+				</section>
+
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

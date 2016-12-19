@@ -1,0 +1,1174 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>一分钟把项目中的图片换成SVG</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/svg.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+			body{
+				-webkit-font-smoothing: antialiased;
+				font-family: 'League Gothic', Impact, sans-serif;
+			}
+			.svgtestcss div{
+				float:left;
+				width:40px;
+				height:40px;
+			}
+			h2{
+				margin-bottom:  0.6em !important;
+				font-size: 2.1em !important;
+			}
+			h1,h2,h3,h4,p,small,li,a{
+				color:#0171bb !important;
+			}
+			a{
+				text-decoration: none;
+			}
+			.svg__vector-intro {
+	    fill: #0171bb;
+	    stroke: #0171bb;}
+		</style>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2>一分钟在我们的项目中使用SVG</h2>
+					
+				</section>
+				<section>
+					<img style="width:380px" src="./img/22.jpeg" alt="">
+					<p>
+						<small>doubleluo（大菠萝）</small>
+					</p>
+				</section>
+				<section>
+					<img style="margin-top:10px;" src="./img/5.png">
+				</section>
+				<section>
+					<section>
+						<h2>SVG的多种引用方法</h2>
+					<ul>
+						<li>object</li>
+						<li>embed</li>
+						<li>iframe</li>
+						<li>img</li>
+						<li>inline</li>
+						<li>css</li>
+						<li>inline css</li>
+					</ul>
+					</section>
+					<section>
+						<section>
+<h2>完</h2>
+<div>
+	<pre>
+		<code>
+<!-- 当图片引用 -->
+<img src="../img/a.svg">
+
+<!-- 内联 动画的最主要实现方法 -->
+<svg xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
+	 viewBox="0 0 960 200">
+<path class="st0 js_svg_path" d="M923,107.3c-11.5,41.5-51.2,38.8-66.5,29.5C829,120,836.9,77.9,810,63.3
+                    	c-21.5-11.6-59-5-67.5,33.5"/>
+</svg>
+
+<!-- 当背景引用 -->
+.svg{
+	background-image:url(../img/a.svg);
+}
+		</code>
+	</pre>
+</div>
+</section>
+					</section>
+				</section>
+				
+<section>
+<h2>分享些什么</h2>
+<ul>
+	<li>SVG是什么</li>
+	<li>为什么用SVG</li>
+	<li>怎么用SVG</li>
+</ul>
+</section>
+				<section>
+					<section>
+						<h2>切图仔的日常</h2>
+						<ul>
+							<li>
+								大部分时间在切一张又一张的设计图
+							</li>
+							<li>
+								嫌弃这件事没有技术含量
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>切图仔的日常</h2>
+						<ul>
+							<li>却发现写了5000行代码</li>
+							<li>优化了又优化</li>
+							<li>还不如一张背景图大</li>
+							<li>我们的网页中70%以上的流量是被切图占据了</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>曾经的我们</h2>
+						<ul>
+							<li>IE6时代 我们用png8来实现透明底色</li>
+							<li>现在我们换成了png24 颜色变成了256的三次方</li>
+						</ul>
+					</section>
+					<section>
+						<h2>曾经的我们</h2>
+						<ul>
+							<li>
+								二倍图三倍图来适应分辨率越来越高的屏幕
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>曾经的我们</h2>
+						<ul>
+							<li>
+								webP提供更高的压缩率和动画
+							</li>
+							<li>但由于兼容性 只能当作渐进增强的方案</li>
+						</ul>
+						<p><img src="./img/1.png"></p>
+					</section>
+					<section>
+						<h2>曾经的我们</h2>
+						<ul>
+							<li>iconfont一度极其流行</li>
+							<li>但毕竟我们的世界没办法只有单一色彩</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>我们在期待什么</h2>
+						<ul>
+							<li>
+								色彩靓
+							</li>
+							<li>质量高</li>
+							<li>尺寸小</li>
+							<li>可以动</li>
+						</ul>
+					</section>
+					<section>
+						<h2>只有累死的牛 没有耕坏的<span style="color:red">田</span></h2>
+						<img style="width:500px" src="./img/17.jpg" alt="">
+					</section>
+					<section>
+						<h2>SVG</h2>
+						<ul>
+							<li>色彩靓　　<span style="color:red">1600万色</span></li>
+							<li>质量高　　<span style="color:red">任何缩放</span></li>
+							<li>尺寸小　　<span style="color:red">只有png的1/5</span></li>
+							<li>可以动　　<span style="color:red">很会动</span></li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>其实好妹子一直在我们身边</h2>
+						<ul>
+							<li>#2001年9月4日，发布SVG 1.0</li>
+							<li>#2011年IE9发布 正式完整支持SVG</li>
+						</ul>
+					</section>
+					<section>
+						<h2>可是我们一直视而不见</h2>
+						<ul>
+							<li>
+								SVG中的概念和标签相当于一套新的HTML
+							</li>
+							<li>PS cc之前一直都没有导出SVG功能</li>
+							<li>实时渲染的性能问题</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+					<h2>掀起你的盖头来</h2>
+					</section>
+					<section>
+        	<img src="./img/25.png" alt="">
+        </section>
+<section id="vector-intro">
+					<h2>基本元素</h2>
+            <svg class="svg__vector-intro" version="1.1" id="js-svg-vector-intro" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
+	 viewBox="0 0 960 200" style="enable-background:new 0 0 960 200;" xml:space="preserve">
+                    <rect style="fill:none" x="40.2" y="25.3" class="st0 js_svg_rect" width="150" height="150"/>
+                    <circle style="fill:none" class="st0 js_svg_circle" cx="354.4" cy="100.3" r="75"/>
+                    <polygon style="fill:none" class="st0 js_svg_polygon" points="593.6,25.3 617.9,74.7 672.4,82.6 633,121.1 642.3,175.3 593.6,149.7 544.8,175.3
+                    	554.1,121.1 514.7,82.6 569.2,74.7 "/>
+                    <path style="fill:none" class="st0 js_svg_path" d="M923,107.3c-11.5,41.5-51.2,38.8-66.5,29.5C829,120,836.9,77.9,810,63.3
+                    	c-21.5-11.6-59-5-67.5,33.5"/>
+                </svg>
+            <pre>
+                <code class="xml" data-noescape data-trim>
+&lt;svg class="svg__vector-intro" viewBox="0 0 960 200"&gt;
+    <span class="js-code-vector-intro_rect fragment">&lt;rect x="40.2" y="25.3" width="150" height="150"/&gt;</span><br>
+    <span class="js-code-vector-intro_circle fragment">&lt;circle cx="354.4" cy="100.3" r="75"/&gt;</span><br>
+    <span class="js-code-vector-intro_polygon fragment">&lt;polygon points="593.6,25.3 617.9,74.7 672.4,82.6 633,121.1 642.3,175.3
+        593.6,149.7 544.8,175.3 554.1,121.1 514.7,82.6 569.2,74.7 "/&gt;</span><br>
+    <span class="js-code-vector-intro_path fragment">&lt;path d="M923,107.3C11.5,41.5 51.2,38.8 66.5,29.5C829,120
+        836.9,77.9 810,63.3C21.5 11.6 59 5 67.5,33.5"/&gt;</span>
+&lt;/svg&gt;
+                </code></pre>
+        </section>
+        
+					<section>
+
+					<h2>视图</h2>
+					<ul><li>viewBox</li>					
+						<li>preserveAspectRatio</li>
+					</ul>
+					<p style="margin-top:40px"><a href="http://www.zhangxinxu.com/wordpress/2014/08/svg-viewport-viewbox-preserveaspectratio/">张鑫旭</a></p>
+</section>
+<script type="text/javascript">
+
+</script>
+
+<section>
+<h2>分组标签</h2>
+<ul>
+	<li>G</li>
+	<li>DEFS　　　　->　　　USE</li>
+	<li>SYMBOL</li>
+</ul>
+</section>
+
+<section>
+	<h2>样式标签</h2>
+	<ul>
+		<li>PARTTEN</li>
+		<li>FILTER　　　　->　　　DESC</li>
+		<li>STYLE</li>
+	</ul>
+<!-- <svg id="svggg" style="width:400px;height:400px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="53" height="53" viewBox="0 0 53 53">
+  <path style="fill: black;stroke: inherit; filter: none;" d="M26.539,20.367 L28.020,24.927 L32.585,25.053 L28.933,27.992 L30.191,32.628 L26.453,29.884 L22.666,32.623 
+L24.008,27.989 L20.409,25.045 L24.976,24.925 L26.539,20.367 Z" id="path-1" ></path>
+<use id="svga" xlink:href="#path-1" style="stroke: #af7925; 
+filter: none; fill: red"></use>
+</svg> -->
+
+<script type="text/javascript">
+	// document.getElementById('USEa').onclick =function(){
+	// 	var chil = document.createElement('use');
+	// 	chil.setAttribute('xlink:href','#path-1');
+	// 	chil.style.filter = 'none';
+	// 	chil.style.stroke = 'red';
+	// 	chil.style.fill = 'red';
+	// 	document.getElementById('svggg').appendChild(chil);
+	// }
+</script>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>设计还原</h2>
+						<small>将设计师想要的东西呈现出来</small>
+					</section>
+					
+					<section>
+						<img style="width:500px;" src="./img/24.png" alt="">
+						<img style="width:100px;height:100px;" src="./img/6.png">
+					</section>
+					<section>
+						<h2>位图　　矢量图</h2>
+						<div>
+							<img style="width:300px" src="./img/13.png" alt="">
+							<img style="width:300px" src="./img/14.png" alt="">
+						</div>
+						<p>不止是变锐 而且变亮</p>
+					</section>
+					<section>
+						<img style="width:500px;" src="./img/16.jpg" alt="">
+					</section>
+					
+					<section>
+						<h2>导出不了的样式</h2>
+						<h2>换一种画法</h2>
+						<ul>
+							<li>画刷效果用钢笔勾勒</li>
+							<li>层叠效果的颜色</li>
+							<li>对单个对象使用渐变</li>
+							<li>不使用智能对象</li>
+							<li>使用有限的自带滤镜</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>最佳的使用场景</h2>
+						<p>扁平化的界面icon和少部分的效果</p>
+						<del>手绘 复杂的渐变 用了很多位图的画板</del>
+					</section>
+					<section>
+						<h2>更好的选择</h2>
+						<img style="width:100px;height:100px;" src="./img/7.png">
+						<span style="vertical-align: 40px;">OR</span>
+						<img style="width:100px;height:100px;" src="./img/8.png">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>懒惰促进工业进步</h2>
+						<div>
+							<pre><code class="">
+.svg{
+	background-image: url(svg.svg);
+}
+								</code>
+							</pre>
+						</div>
+					</section>
+					<section>
+						<h2>懒惰促进工业进步</h2>
+						<small>自动添加宽高</small>
+						<div>
+						<pre><code class="">
+.png{
+	width: 40px;
+	height: 40px;
+	background-image: url(png.png);
+	@media query(min-device-pixel-ratio: 3){
+		background-image: url(png@3x.png);
+		background-size: 40px 40px;
+	}
+}
+								</code>
+							</pre>
+						</div>
+						<div>
+					<pre><code class="">
+.svg{
+	width: 40px;
+	height: 40px;
+	background-image:url(svg.svg);
+}
+								</code>
+							</pre>
+						</div>
+					</section>
+
+					<section>
+						<h2>懒惰促进工业进步</h2>
+						<small>减少请求</small>
+						<div>
+						<small>base64 354字符 增加45%</small>
+							<pre>
+								<code class="">
+.svg{
+	width: 40px;
+	height: 40px;
+	background-image: url(data:image/svg+xml;
+	base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy
+	53My5vcmcvMjAwMC9zdmciIHdpZHRoP
+	SIyIiBoZWlnaHQ9IjQ1OCIgdmlld0JveD0iM
+	CAwIDIgNDU4Ij4gIDxwb2x5bGluZSBmaWxs
+	PSJub25lIiBzdHJva2U9IiM5Nzk3OTciIHBvaW5
+	0cz0iMS4zNDQgLjQ2OSAxLjM0NCA1OS43ODEgMS4
+	zNDQgMjYxLjQzOCAxLjM0NCAzNzQuMTI1IDEuMzQ0IDQ
+	wOS42ODggMS4zNDQgNDI3LjUgMS4zNDQgNDUxLjI
+	xOSAxLjM0NCA0NTcuMTU2Ii8+PC9zdmc+);
+}
+								</code>
+							</pre>
+						</div>
+					</section>
+					<section>
+					<div>
+						<h2>懒惰促进工业进步</h2>
+						<small>简易版urlencode 280字符 增加14%</small>
+						<pre>
+							<code class="">
+.svg{
+	width: 40px;
+	height: 40px;
+	background-image: url("data:image/svg+xml,%3Csvg 
+	xmlns='http://www.w3.org/2000/svg' width='2' 
+	height='458' viewBox='0 0 2 458'%3E %3Cpolyline 
+	fill='none' stroke='%23979797' points='1.344 .469 
+	1.344 59.781 1.344 261.438 1.344 374.125 1.344 
+	409.688 1.344 427.5 1.344 451.219 1.344 457.156'/
+	%3E %3C/svg%3E ");
+}
+							</code>
+						</pre>
+					</div>
+					</section>
+					<section>
+						<h2>懒惰促进工业进步</h2>
+						<p>SVGO</p>
+						<ul>
+							<li>去掉不必要的注释和空格</li>
+							<li>去掉多余的标签及CLASS</li>
+							<li>数值换算成16进制减小精度</li>
+							<li>压缩不会影响性能及效果</li>
+						</ul>
+					</section>
+					<section>
+						<h2>懒惰促进工业进步</h2>
+						<p>当我们需要全站REM统一多屏体验</p>
+						<pre>
+							<code class="">
+.png{
+	width: 1.75rem;
+	height: 1.75rem;
+	background-image: url(spirte@2x.png);
+	background-position: 10px 10px;
+	background-size: 1.75rem 1.75rem;
+}
+							</code>
+						</pre>
+						</section>
+					<section>
+						<h2>懒惰促进工业进步</h2>
+						<p>Sprite和REM的坑</p>
+						<img style="width:400px;" src="./img/2.png" alt="">
+					</section>
+						
+						<section>
+							<h2>懒惰促进工业进步</h2>
+							<p>Sprite和REM的坑</p>
+						 	<p>1.75rem换算表</p>
+							<table style="width:100%;">
+<thead>
+<tr>
+<th>代表机型</th>
+<th>浏览器宽</th>
+<th>对应尺寸</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iPhone 4/4s/5/5s</td>
+<td>320px</td>
+<td>56px</td>
+</tr>
+<tr>
+<td>iPhone 6</td>
+<td>375px</td>
+<td style="color:red">65.625px</td>
+</tr>
+<tr>
+<td>Google Nexus 6</td>
+<td>412px</td>
+<td style="color:red">72.1px</td>
+</tr>
+<tr>
+<td>iPhone 6 Plus</td>
+<td>414px</td>
+<td style="color:red">72.45px</td>
+</tr>
+</tbody>
+</table>
+					</section>
+					<section>
+					<h2>懒惰促进工业进步</h2>
+					<p>轻易的解决REM的问题</p>
+<pre>
+	<code>
+.svg{
+	width: 1.75rem;
+	height: 1.75rem;
+	background-size: 100% 100%;
+	background-image: url("data:image/svg+xml,%3Csvg width='40' height='36' 
+	viewBox='0 0 40 36' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300B000' 
+	fill-rule='evenodd'%3E%3Cpath d='...' stroke='%2300B000' 
+	M31.4 17.476h2.564v-1.617H31.4z'/%3E%3C/g%3E%3C/svg%3E")
+}
+	</code>
+</pre>
+
+					</section>
+						<section>
+						<h2>懒惰促进工业进步</h2>
+						<small>兼容性</small>
+						<img src="./img/9.png">
+					</section>
+					<section>
+						<h2>懒惰促进工业进步</h2>
+						<small>降级</small>
+						<pre>
+							<code class="">
+.svg{
+	width: 1.75rem;
+	height: 1.75rem;
+	background-size: 100% 100%;
+	background-image: url(../img/img.png);
+	background-image: url("data:image/svg+xml,%3Csvg width='40' height='36' 
+	viewBox='0 0 40 36' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300B000' 
+	fill-rule='evenodd'%3E%3Cpath d='...' stroke='%2300B000' 
+	M31.4 17.476h2.564v-1.617H31.4z'/%3E%3C/g%3E%3C/svg%3E")
+	,none;
+}
+</code></pre>
+					</section>
+
+				</section>
+				<section>
+					<section>
+						<h2>压缩与性能</h2>
+						<small>搞这些事情 ，值么</small>
+					</section>
+					<section>
+						<div class="svgtestcss">
+							<p>239个icon</p>
+							<div class=a703593768418020500></div><div class=a444516362142437500></div><div class=a7051568593419197000></div><div class=a8778670176396182000></div><div class=a8184437887310363000></div><div class=a59850271126951070></div><div class=a9715375748244195000></div><div class=a2753716130739261000></div><div class=a9620393120182071000></div><div class=a2367326566888172500></div><div class=a5650165340393552000></div><div class=a4175728430692529000></div><div class=a6099434190492841000></div><div class=a8950745529430832000></div><div class=a5052500675651812000></div><div class=a8579003499228151000></div><div class=a7292098263322839000></div><div class=a9296659147109590000></div><div class=a4243010165616450000></div><div class=a3544790619885221000></div><div class=a5643541079609262000></div><div class=a5214388030545112000></div><div class=a9833191580774710000></div><div class=a9217907722000798000></div><div class=a7697640721023855000></div><div class=a5458851105248835000></div><div class=a9373375413416573000></div><div class=a8493109391001871000></div><div class=a5662867841270605000></div><div class=a6276915139871518000></div><div class=a9137084029332647000></div><div class=a3731486684495561700></div><div class=a4273289498700901000></div><div class=a1706001914536328200></div><div class=a1853517195608924700></div><div class=a6125536749595876000></div><div class=a3708044689781218000></div><div class=a8482340457441107000></div><div class=a8974551472459036000></div><div class=a2985167204865955000></div><div class=a2658836675093605400></div><div class=a4932302860692317000></div><div class=a6560999818196793000></div><div class=a3101384355117900000></div><div class=a241606674962462370></div><div class=a6613577550009895000></div><div class=a7593493325130209000></div><div class=a1306610058300243700></div><div class=a5552172423162951000></div><div class=a4725802029330101000></div><div class=a2794559814078432000></div><div class=a1370574346225022000></div><div class=a890136641294749800></div><div class=a6665212169995445000></div><div class=a6954088053823976000></div><div class=a703751969019492600></div><div class=a1946287510954709500></div><div class=a740564480570924400></div><div class=a4217945909806870500></div><div class=a4838236721012346000></div><div class=a9837777489913694000></div><div class=a933732497092791800></div><div class=a2612451161540044000></div><div class=a5561509270562443000></div><div class=a9198463098924385000></div><div class=a7778434026376934000></div><div class=a1583821499476445400></div><div class=a9091675031365656000></div><div class=a4939086735073075000></div><div class=a9443499607185668000></div><div class=a5606932773795406000></div><div class=a7029984027879246000></div><div class=a4228107069493250000></div><div class=a282701043879469700></div><div class=a9664372966405605000></div><div class=a3014939580816797700></div><div class=a180403818225201020></div><div class=a400584438197322240></div><div class=a7291661676373431000></div><div class=a7292255092761331000></div><div class=a1601062232868366600></div><div class=a9921202131419800000></div><div class=a7521627027267615000></div><div class=a391024674244324600></div><div class=a4442804800439359500></div><div class=a7495684372940041000></div><div class=a2796213682333628000></div><div class=a1570571509050451200></div><div class=a9100875876699454000></div><div class=a7698277279369700000></div><div class=a7760144667186342000></div><div class=a3610686801037976600></div><div class=a9150273401570544000></div><div class=a5607202070452159000></div><div class=a7688906032509435000></div><div class=a8739711983042382000></div><div class=a9005657686308457000></div><div class=a2318139918254085000></div><div class=a7266573374624108000></div><div class=a3893872677822945000></div><div class=a373961787706631500></div><div class=a5350411074214411000></div><div class=a7905856098073967000></div><div class=a7051370259217143000></div><div class=a645373663556729700></div><div class=a4091092412817190000></div><div class=a2357678812514327600></div><div class=a1446945851752057300></div><div class=a2318531688453689000></div><div class=a6026113585701620000></div><div class=a6998577284160230000></div><div class=a6611325197805853000></div><div class=a6953068667172253000></div><div class=a3151897454415006700></div><div class=a157857369235521180></div><div class=a1029000965757365100></div><div class=a5047952389135146000></div><div class=a4776569504324566000></div><div class=a3722532141479941600></div><div class=a747631288042860400></div><div class=a3075245172702314500></div><div class=a2066405913253785900></div><div class=a9291337492605809000></div><div class=a7087728972822900000></div><div class=a8082575812043999000></div><div class=a6863461026435893000></div><div class=a5374262612749363000></div><div class=a5202129400134872000></div><div class=a9951374545989143000></div><div class=a1629729798650507800></div><div class=a6381484970113269000></div><div class=a1201941497377516500></div><div class=a1059001235227161600></div><div class=a3993734785748328400></div><div class=a6283829897821187000></div><div class=a6818850550547702000></div><div class=a4799223451407648000></div><div class=a7310943512854957000></div><div class=a5087573841746222000></div><div class=a189457856837325100></div><div class=a1039609126057337000></div><div class=a2994574039427324400></div><div class=a3733946294061130000></div><div class=a8338213799851646000></div><div class=a3833752782389559000></div><div class=a2092419463119641300></div><div class=a2917245318078378500></div><div class=a6901573992809944000></div><div class=a6473455731292315000></div><div class=a5903487974338053000></div><div class=a5508205442773694000></div><div class=a6272120114463999000></div><div class=a3299991187061182000></div><div class=a1918588304638366700></div><div class=a606417290678293900></div><div class=a4229835924342766600></div><div class=a44021255114534696></div><div class=a6438801365492946000></div><div class=a1352360836253145900></div><div class=a1056201006952226600></div><div class=a5899086774896360000></div><div class=a4417875945182323700></div><div class=a6851379892984666000></div><div class=a3084043010976509400></div><div class=a2651706484675553300></div><div class=a3503501544713179000></div><div class=a4713001387540785000></div><div class=a1098297818587126100></div><div class=a1729310099349594600></div><div class=a2286783240632865800></div><div class=a3570685462872071700></div><div class=a1197594410370315000></div><div class=a9119389182017792000></div><div class=a6610433896990318000></div><div class=a5427124893424955000></div><div class=a7104162367251577000></div><div class=a4198422733872688600></div><div class=a6323596033926833000></div><div class=a6590164099478226000></div><div class=a6428637035729456000></div><div class=a9703737137310235000></div><div class=a6944468439398832000></div><div class=a5726834071078302000></div><div class=a8094763646393432000></div><div class=a9439497925339576000></div><div class=a6994996728793832000></div><div class=a4226756804367279600></div><div class=a4106333323370705400></div><div class=a7838191119029256000></div><div class=a1262819473793577200></div><div class=a5930870456948780000></div><div class=a6934622339456746000></div><div class=a4083092601208284700></div><div class=a3334204697702330000></div><div class=a8651786947242180000></div><div class=a3147650614193093600></div><div class=a9884821728782735000></div><div class=a473495275171989000></div><div class=a9641694029973334000></div><div class=a9403647185914784000></div><div class=a266938181068621120></div><div class=a3715626878501423600></div><div class=a3400797826105939000></div><div class=a2128153650228545800></div><div class=a1185234991216819200></div><div class=a3594102205229057000></div><div class=a6239161964264650000></div><div class=a4107186955659820500></div><div class=a7112809325916245000></div><div class=a3958683998574137300></div><div class=a1620854678791354600></div><div class=a1321212774419922000></div><div class=a9723141192933728000></div><div class=a1938283862464096300></div><div class=a8798005104596791000></div><div class=a6563812229881598000></div><div class=a6863382781030166000></div><div class=a3791737899768675000></div><div class=a3687698926960925000></div><div class=a3991442134455225300></div><div class=a1800605825764232200></div><div class=a8812294139271819000></div><div class=a6796030968155427000></div><div class=a3128601871200753700></div><div class=a3315473369414881000></div><div class=a3814298368679125500></div><div class=a4873071403862870000></div><div class=a7830129043915317000></div><div class=a503998122070139500></div><div class=a3501986455539854000></div><div class=a5345668551939209000></div><div class=a7800903737375871000></div><div class=a8784520445931210000></div><div class=a2408749020616987000></div><div class=a8572806743908842000></div><div class=a2215357552913914600></div><div class=a8294300389628524000></div><div class=a8899183026653498000></div><div class=a1241138825576011500></div>
+						</div>
+					</section>
+					<section>
+						<h2>测试用例</h2>
+						<p><img style="margin-top:10px;" src="./img/5.png"></p>
+					</section>
+					<section>
+						<h2>PNG@3x　　　　　SVG</h2>
+						<p style="color:red;">490KB　　 　　　　　　　　76.5KB</p>
+						<img style="width:450px;" src="./img/3.png" alt="">
+						<img style="width:450px;"  src="./img/4.png" alt="">
+					</section>
+				</section>
+				<section>
+					<section>
+						<div style="float:left">
+							<h2>优点</h2>
+							<ul>
+								<li>质量高</li>
+								<li>文件小</li>
+								<li>很会动</li>
+							</ul>
+						</div>
+						<div style="float:right">
+							<h2>缺点</h2>
+						<ul><li>实时渲染耗时</li></ul>
+						</div>
+						
+					</section>
+					<section>
+						<h2>是时候了</h2>
+						<h2>替换多倍图切图为SVG</h2>
+
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>
+							再多一点优点
+						</h2>
+					</section>
+					<section class="svgtestcss">
+					<h2>239个icon</h2>
+							<div class=a703593768418020500></div><div class=a444516362142437500></div><div class=a7051568593419197000></div><div class=a8778670176396182000></div><div class=a8184437887310363000></div><div class=a59850271126951070></div><div class=a9715375748244195000></div><div class=a2753716130739261000></div><div class=a9620393120182071000></div><div class=a2367326566888172500></div><div class=a5650165340393552000></div><div class=a4175728430692529000></div><div class=a6099434190492841000></div><div class=a8950745529430832000></div><div class=a5052500675651812000></div><div class=a8579003499228151000></div><div class=a7292098263322839000></div><div class=a9296659147109590000></div><div class=a4243010165616450000></div><div class=a3544790619885221000></div><div class=a5643541079609262000></div><div class=a5214388030545112000></div><div class=a9833191580774710000></div><div class=a9217907722000798000></div><div class=a7697640721023855000></div><div class=a5458851105248835000></div><div class=a9373375413416573000></div><div class=a8493109391001871000></div><div class=a5662867841270605000></div><div class=a6276915139871518000></div><div class=a9137084029332647000></div><div class=a3731486684495561700></div><div class=a4273289498700901000></div><div class=a1706001914536328200></div><div class=a1853517195608924700></div><div class=a6125536749595876000></div><div class=a3708044689781218000></div><div class=a8482340457441107000></div><div class=a8974551472459036000></div><div class=a2985167204865955000></div><div class=a2658836675093605400></div><div class=a4932302860692317000></div><div class=a6560999818196793000></div><div class=a3101384355117900000></div><div class=a241606674962462370></div><div class=a6613577550009895000></div><div class=a7593493325130209000></div><div class=a1306610058300243700></div><div class=a5552172423162951000></div><div class=a4725802029330101000></div><div class=a2794559814078432000></div><div class=a1370574346225022000></div><div class=a890136641294749800></div><div class=a6665212169995445000></div><div class=a6954088053823976000></div><div class=a703751969019492600></div><div class=a1946287510954709500></div><div class=a740564480570924400></div><div class=a4217945909806870500></div><div class=a4838236721012346000></div><div class=a9837777489913694000></div><div class=a933732497092791800></div><div class=a2612451161540044000></div><div class=a5561509270562443000></div><div class=a9198463098924385000></div><div class=a7778434026376934000></div><div class=a1583821499476445400></div><div class=a9091675031365656000></div><div class=a4939086735073075000></div><div class=a9443499607185668000></div><div class=a5606932773795406000></div><div class=a7029984027879246000></div><div class=a4228107069493250000></div><div class=a282701043879469700></div><div class=a9664372966405605000></div><div class=a3014939580816797700></div><div class=a180403818225201020></div><div class=a400584438197322240></div><div class=a7291661676373431000></div><div class=a7292255092761331000></div><div class=a1601062232868366600></div><div class=a9921202131419800000></div><div class=a7521627027267615000></div><div class=a391024674244324600></div><div class=a4442804800439359500></div><div class=a7495684372940041000></div><div class=a2796213682333628000></div><div class=a1570571509050451200></div><div class=a9100875876699454000></div><div class=a7698277279369700000></div><div class=a7760144667186342000></div><div class=a3610686801037976600></div><div class=a9150273401570544000></div><div class=a5607202070452159000></div><div class=a7688906032509435000></div><div class=a8739711983042382000></div><div class=a9005657686308457000></div><div class=a2318139918254085000></div><div class=a7266573374624108000></div><div class=a3893872677822945000></div><div class=a373961787706631500></div><div class=a5350411074214411000></div><div class=a7905856098073967000></div><div class=a7051370259217143000></div><div class=a645373663556729700></div><div class=a4091092412817190000></div><div class=a2357678812514327600></div><div class=a1446945851752057300></div><div class=a2318531688453689000></div><div class=a6026113585701620000></div><div class=a6998577284160230000></div><div class=a6611325197805853000></div><div class=a6953068667172253000></div><div class=a3151897454415006700></div><div class=a157857369235521180></div><div class=a1029000965757365100></div><div class=a5047952389135146000></div><div class=a4776569504324566000></div><div class=a3722532141479941600></div><div class=a747631288042860400></div><div class=a3075245172702314500></div><div class=a2066405913253785900></div><div class=a9291337492605809000></div><div class=a7087728972822900000></div><div class=a8082575812043999000></div><div class=a6863461026435893000></div><div class=a5374262612749363000></div><div class=a5202129400134872000></div><div class=a9951374545989143000></div><div class=a1629729798650507800></div><div class=a6381484970113269000></div><div class=a1201941497377516500></div><div class=a1059001235227161600></div><div class=a3993734785748328400></div><div class=a6283829897821187000></div><div class=a6818850550547702000></div><div class=a4799223451407648000></div><div class=a7310943512854957000></div><div class=a5087573841746222000></div><div class=a189457856837325100></div><div class=a1039609126057337000></div><div class=a2994574039427324400></div><div class=a3733946294061130000></div><div class=a8338213799851646000></div><div class=a3833752782389559000></div><div class=a2092419463119641300></div><div class=a2917245318078378500></div><div class=a6901573992809944000></div><div class=a6473455731292315000></div><div class=a5903487974338053000></div><div class=a5508205442773694000></div><div class=a6272120114463999000></div><div class=a3299991187061182000></div><div class=a1918588304638366700></div><div class=a606417290678293900></div><div class=a4229835924342766600></div><div class=a44021255114534696></div><div class=a6438801365492946000></div><div class=a1352360836253145900></div><div class=a1056201006952226600></div><div class=a5899086774896360000></div><div class=a4417875945182323700></div><div class=a6851379892984666000></div><div class=a3084043010976509400></div><div class=a2651706484675553300></div><div class=a3503501544713179000></div><div class=a4713001387540785000></div><div class=a1098297818587126100></div><div class=a1729310099349594600></div><div class=a2286783240632865800></div><div class=a3570685462872071700></div><div class=a1197594410370315000></div><div class=a9119389182017792000></div><div class=a6610433896990318000></div><div class=a5427124893424955000></div><div class=a7104162367251577000></div><div class=a4198422733872688600></div><div class=a6323596033926833000></div><div class=a6590164099478226000></div><div class=a6428637035729456000></div><div class=a9703737137310235000></div><div class=a6944468439398832000></div><div class=a5726834071078302000></div><div class=a8094763646393432000></div><div class=a9439497925339576000></div><div class=a6994996728793832000></div><div class=a4226756804367279600></div><div class=a4106333323370705400></div><div class=a7838191119029256000></div><div class=a1262819473793577200></div><div class=a5930870456948780000></div><div class=a6934622339456746000></div><div class=a4083092601208284700></div><div class=a3334204697702330000></div><div class=a8651786947242180000></div><div class=a3147650614193093600></div><div class=a9884821728782735000></div><div class=a473495275171989000></div><div class=a9641694029973334000></div><div class=a9403647185914784000></div><div class=a266938181068621120></div><div class=a3715626878501423600></div><div class=a3400797826105939000></div><div class=a2128153650228545800></div><div class=a1185234991216819200></div><div class=a3594102205229057000></div><div class=a6239161964264650000></div><div class=a4107186955659820500></div><div class=a7112809325916245000></div><div class=a3958683998574137300></div><div class=a1620854678791354600></div><div class=a1321212774419922000></div><div class=a9723141192933728000></div><div class=a1938283862464096300></div><div class=a8798005104596791000></div><div class=a6563812229881598000></div><div class=a6863382781030166000></div><div class=a3791737899768675000></div><div class=a3687698926960925000></div><div class=a3991442134455225300></div><div class=a1800605825764232200></div><div class=a8812294139271819000></div><div class=a6796030968155427000></div><div class=a3128601871200753700></div><div class=a3315473369414881000></div><div class=a3814298368679125500></div><div class=a4873071403862870000></div><div class=a7830129043915317000></div><div class=a503998122070139500></div><div class=a3501986455539854000></div><div class=a5345668551939209000></div><div class=a7800903737375871000></div><div class=a8784520445931210000></div><div class=a2408749020616987000></div><div class=a8572806743908842000></div><div class=a2215357552913914600></div><div class=a8294300389628524000></div><div class=a8899183026653498000></div><div class=a1241138825576011500></div>
+					</section>
+					<section>
+						<h2>换色的能力</h2>
+						<p>fill</p>
+					</section>
+					<section>
+						<h2>一个icon承担四种状态</h2>
+						<style type="text/css">
+						.red path,.red use{fill:red;}
+						.green path,.green use{fill:green;}
+						.orange path,.orange use{fill:orange;}
+						.gray path,.gray use{fill:gray;}
+						</style>
+<svg style="width:80px;height:80px;vertical-align: 300px;" class="red" width="21" height="22" viewBox="0 0 21 22" xmlns="http://www.w3.org/2000/svg"><use xlink:href="./img/a.svg#ttt"/></svg>
+<svg style="width:80px;height:80px;vertical-align: 300px;" class="green" width="21" height="22" viewBox="0 0 21 22" xmlns="http://www.w3.org/2000/svg"><use xlink:href="./img/a.svg#ttt"/></svg>
+<svg style="width:80px;height:80px;vertical-align: 300px;" class="orange" width="21" height="22" viewBox="0 0 21 22" xmlns="http://www.w3.org/2000/svg"><use xlink:href="./img/a.svg#ttt"/></svg>
+<svg style="width:80px;height:80px;vertical-align: 300px;" class="gray" width="21" height="22" viewBox="0 0 21 22" xmlns="http://www.w3.org/2000/svg"><use xlink:href="./img/a.svg#ttt"/></svg>
+					<img style="width:300px" src="./img/10.jpg" alt="">
+</section>
+<section>
+<h2>需求</h2>
+<p>固定功能 （公积金 医院 水电）</p>
+<p>特殊功能 （ETC 志愿者 大使馆）</p>
+</section>
+<section>
+<h2>雪碧图</h2>
+<p>用于需要缓存的需要换色的图片</p>
+<pre>
+<code>
+<!-- 使用 -->
+<img id="red" class="red" src="./img/a.svg?s">
+<!-- 转换 -->
+<svg id="red" class="red" width="21" height="22" 
+viewBox="0 0 21 22" xmlns="http://www.w3.org/2000/svg">
+<use xlink:href="./img/a.svg#ttt"/>
+</svg>
+</code>
+</pre>
+</section>
+<section>
+<h2>内联</h2>
+<p>用于不适合缓存及需要动画的图片</p>
+<pre>
+<code>
+<!-- 使用 -->
+<img id="red" class="red" src="./img/a.svg?i">
+<!-- 转换 -->
+<svg id="red" class="red" width="21" height="22" 
+viewBox="0 0 21 22" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.157 ..." fill-rule="evenodd"/>
+<path d="M20.157 ..." fill-rule="evenodd"/>
+</svg>
+</code>
+</pre>
+</section>
+<section>
+<h2>降级</h2>
+<p>基本使用</p>
+	<pre>
+		<code>
+<!-- 使用 -->
+<img id="bule" class="bule" src="./img/a.svg">
+<!-- 转换 -->
+<svg id="bule" class="bule" width="21" height="22" 
+viewBox="0 0 21 22" xmlns="http://www.w3.org/2000/svg">
+<image width="21" height="22" src="../img/a.png" xlink:href=="./img/a.svg"/>
+</svg>	
+		</code>
+	</pre>
+</section>
+
+</section>
+
+<section>
+<section>
+	<h2>需要的帮你做好了</h2>
+
+<a href="https://github.com/weixin/tmt-workflow"><img src="./img/b.svg" alt=""></a>　　　　　
+<a href="https://weflow.io/"><img style="width:150px" src="./img/20.png" alt=""></a>
+<p>暂未合并svg部分到主干，请给我三天时间：）</p>
+</section>
+
+<section>
+<h2>需要的帮你做好了</h2>
+<img style="width:700px" src="./img/23.gif" alt="">
+</section>
+</section>
+
+<section>
+	<section>
+		<h2>你只需要</h2>
+		<div>
+			<pre>
+				<code>
+		HTML
+		<img src="../img/a.svg">
+		<img src="../img/a.svg?i">
+		<img src="../img/a.svg?s">
+
+		CSS
+		.svg{
+			background-image:url(../img/a.svg);
+		}
+				</code>
+			</pre>
+		</div>
+	</section>
+	<section>
+		<h2>怎么样 想用了吗？</h2>	
+	</section>
+</section>
+<section>
+	<section>
+		<h2>买一赠一</h2>
+	<div style="width:400px;float:left">
+		<a target="_blank" href="http://www.flaticon.com"><img style="width:400px;height:300px;" src="./img/18.png" alt="">
+		</a>
+	</div>
+	<div style="width:400px;float:right">
+		<a target="_blank" href="http://www.iconfont.cn"><img style="width:400px;height:300px;" src="./img/19.png" alt=""></a>	
+	</div>
+	</section>
+	
+
+	<section>
+	<h2>买一赠一</h2>
+	<div>
+		<a target="_blank" href="https://github.com/xiabaiyang/wechat-iconfont">
+		<img style="width:800px;" src="./img/21.png" alt="">
+			
+		</a>	
+		<p> by maybexia</p>
+	</div>
+</section>
+</section>
+
+<section>
+	<section>
+		<h2>还不想用？</h2>	
+	</section>
+	<section>
+		<h2>我暂时没办法了</h2>
+	</section>
+	<section>
+		<h2>但我的同事还有</h2>
+	</section>
+</section>
+<section style="text-align: left;">
+	<h1 id="aaaaa">THE END</h1>
+	<style type="text/css">
+	@-webkit-keyframes show {
+    to {
+        opacity: 1
+    }
+}
+
+.st0 {
+    opacity: 0;
+    fill: #F5BD3A;
+    -webkit-animation: show 1.5s 1.5s linear both
+}
+
+	
+	.active #XMLID_63_ {
+	    -webkit-animation: show 2s linear both
+	}
+
+	.active #XMLID_61_ {
+	    -webkit-animation: line0 2.5s 2.3s linear both
+	}
+
+	@-webkit-keyframes line0 {
+	    to {
+	        stroke-dashoffset: 0
+	    }
+	}
+
+	.active #XMLID_60_ {
+	    -webkit-animation: line1 2.5s 2.3s linear both
+	}
+
+	@-webkit-keyframes line1 {
+	    to {
+	        stroke-dashoffset: 0
+	    }
+	}
+
+	.active #XMLID_59_ {
+	    -webkit-animation: line2 2.5s 2.3s linear both
+	}
+
+	@-webkit-keyframes line2 {
+	    to {
+	        stroke-dashoffset: 0
+	    }
+	}
+
+	.active #XMLID_58_ {
+	    -webkit-animation: line3 2.5s 2.3s linear both
+	}
+
+	@-webkit-keyframes line3 {
+	    to {
+	        stroke-dashoffset: 0
+	    }
+	}
+
+	.active #XMLID_57_ {
+	    -webkit-animation: line4 2.5s 2.3s linear both
+	}
+
+	@-webkit-keyframes line4 {
+	    to {
+	        stroke-dashoffset: 0
+	    }
+	}
+
+	.active #XMLID_56_ {
+	    -webkit-animation: line5 2.5s 2s linear both
+	}
+
+	@-webkit-keyframes line5 {
+	    to {
+	        stroke-dashoffset: 0
+	    }
+	}
+
+	.active #XMLID_55_ {
+	    -webkit-animation: line6 2.5s 2.3s linear both
+	}
+
+	@-webkit-keyframes line6 {
+	    to {
+	        stroke-dashoffset: 0
+	    }
+	}
+
+	.active #XMLID_54_ {
+	    -webkit-animation: line7 2.5s 2.3s linear both
+	}
+
+	@-webkit-keyframes line7 {
+	    to {
+	        stroke-dashoffset: 0
+	    }
+	}
+
+	.active #XMLID_53_ {
+	    -webkit-animation: line8 2.5s 2.3s linear both
+	}
+
+	@-webkit-keyframes line8 {
+	    to {
+	        stroke-dashoffset: 0
+	    }
+	}
+
+	.active #XMLID_52_ {
+	    -webkit-animation: line9 2.5s 2.3s linear both
+	}
+
+	@-webkit-keyframes line9 {
+	    to {
+	        stroke-dashoffset: 0
+	    }
+	}
+
+	.active #XMLID_51_ {
+	    -webkit-animation: line10 2.5s 2.3s linear both
+	}
+
+	@-webkit-keyframes line10 {
+	    to {
+	        stroke-dashoffset: 0
+	    }
+	}
+
+	.active #XMLID_50_ {
+	    -webkit-animation: line11 2.5s 2.3s linear both
+	}
+
+	@-webkit-keyframes line11 {
+	    to {
+	        stroke-dashoffset: 0
+	    }
+	}
+
+	.active #XMLID_49_ {
+	    -webkit-animation: line12 2.5s 2.3s linear both
+	}
+
+	@-webkit-keyframes line12 {
+	    to {
+	        stroke-dashoffset: 0
+	    }
+	}
+
+	.active #XMLID_48_ {
+	    -webkit-animation: line13 2.5s 2.3s linear both
+	}
+
+	@-webkit-keyframes line13 {
+	    to {
+	        stroke-dashoffset: 0
+	    }
+	}
+
+#XMLID_63_ {
+    /*-webkit-animation: show 2s linear both*/
+}
+
+.st1 {
+    fill: none;
+    stroke: #F5BD3A;
+    stroke-width: .4;
+    stroke-miterlimit: 10
+}
+
+#XMLID_61_ {
+    stroke-dasharray: 171.79998779296875;
+    stroke-dashoffset: 171.79998779296875;
+    /*-webkit-animation: line0 2.5s 2.3s linear both*/
+}
+
+@-webkit-keyframes line0 {
+    to {
+        stroke-dashoffset: 0
+    }
+}
+
+#XMLID_60_ {
+    stroke-dasharray: 16.300003051757812;
+    stroke-dashoffset: 16.300003051757812;
+    /*-webkit-animation: line1 2.5s 2.3s linear both*/
+}
+
+@-webkit-keyframes line1 {
+    to {
+        stroke-dashoffset: 0
+    }
+}
+
+#XMLID_59_ {
+    stroke-dasharray: 54.099998474121094;
+    stroke-dashoffset: 54.099998474121094;
+    /*-webkit-animation: line2 2.5s 2.3s linear both*/
+}
+
+@-webkit-keyframes line2 {
+    to {
+        stroke-dashoffset: 0
+    }
+}
+
+#XMLID_58_ {
+    stroke-dasharray: 19.999998092651367;
+    stroke-dashoffset: 19.999998092651367;
+    /*-webkit-animation: line3 2.5s 2.3s linear both*/
+}
+
+@-webkit-keyframes line3 {
+    to {
+        stroke-dashoffset: 0
+    }
+}
+
+#XMLID_57_ {
+    stroke-dasharray: 39.59999084472656;
+    stroke-dashoffset: 39.59999084472656;
+    /*-webkit-animation: line4 2.5s 2.3s linear both*/
+}
+
+@-webkit-keyframes line4 {
+    to {
+        stroke-dashoffset: 0
+    }
+}
+
+#XMLID_56_ {
+    stroke-dasharray: 133.5;
+    stroke-dashoffset: 133.5;
+    /*-webkit-animation: line5 2.5s 2s linear both*/
+}
+
+@-webkit-keyframes line5 {
+    to {
+        stroke-dashoffset: 0
+    }
+}
+
+#XMLID_55_ {
+    stroke-dasharray: 72.40000915527344;
+    stroke-dashoffset: 72.40000915527344;
+    /*-webkit-animation: line6 2.5s 2.3s linear both*/
+}
+
+@-webkit-keyframes line6 {
+    to {
+        stroke-dashoffset: 0
+    }
+}
+
+#XMLID_54_ {
+    stroke-dasharray: 65.10000610351562;
+    stroke-dashoffset: 65.10000610351562;
+    /*-webkit-animation: line7 2.5s 2.3s linear both*/
+}
+
+@-webkit-keyframes line7 {
+    to {
+        stroke-dashoffset: 0
+    }
+}
+
+#XMLID_53_ {
+    stroke-dasharray: 49.740013122558594;
+    stroke-dashoffset: 49.740013122558594;
+    /*-webkit-animation: line8 2.5s 2.3s linear both*/
+}
+
+@-webkit-keyframes line8 {
+    to {
+        stroke-dashoffset: 0
+    }
+}
+
+#XMLID_52_ {
+    stroke-dasharray: 57.5;
+    stroke-dashoffset: 57.5;
+    /*-webkit-animation: line9 2.5s 2.3s linear both*/
+}
+
+@-webkit-keyframes line9 {
+    to {
+        stroke-dashoffset: 0
+    }
+}
+
+#XMLID_51_ {
+    stroke-dasharray: 18.86414337158203;
+    stroke-dashoffset: 18.86414337158203;
+    /*-webkit-animation: line10 2.5s 2.3s linear both*/
+}
+
+@-webkit-keyframes line10 {
+    to {
+        stroke-dashoffset: 0
+    }
+}
+
+#XMLID_50_ {
+    stroke-dasharray: 21.40000343322754;
+    stroke-dashoffset: 21.40000343322754;
+    /*-webkit-animation: line11 2.5s 2.3s linear both*/
+}
+
+@-webkit-keyframes line11 {
+    to {
+        stroke-dashoffset: 0
+    }
+}
+
+#XMLID_49_ {
+    stroke-dasharray: 151.70001220703125;
+    stroke-dashoffset: 151.70001220703125;
+    /*-webkit-animation: line12 2.5s 2.3s linear both*/
+}
+
+@-webkit-keyframes line12 {
+    to {
+        stroke-dashoffset: 0
+    }
+}
+
+#XMLID_48_ {
+    stroke-dasharray: 134.82260131835938;
+    stroke-dashoffset: 134.82260131835938;
+    /*-webkit-animation: line13 2.5s 2.3s linear both*/
+}
+
+@-webkit-keyframes line13 {
+    to {
+        stroke-dashoffset: 0
+    }
+}
+	</style>
+	<div  data-fragment-index="0" id="test1" >
+		<svg style="width: 350px;height: 600px;float:right" version="1.1" id="revoke" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 120" style="enable-background:new 0 0 60 120;" xml:space="preserve">
+
+			<circle id="XMLID_71_" class="st0" cx="9.6" cy="6.2" r="1.4"></circle>
+			<circle id="XMLID_70_" class="st0" cx="5.7" cy="12.7" r="1.4"></circle>
+			<circle id="XMLID_69_" class="st0" cx="49" cy="22.8" r="1.4"></circle>
+			<circle id="XMLID_68_" class="st0" cx="23.3" cy="32.7" r="1.4"></circle>
+			<circle id="XMLID_67_" class="st0" cx="52.2" cy="53.1" r="1.4"></circle>
+			<circle id="XMLID_66_" class="st0" cx="55.6" cy="82.8" r="1.4"></circle>
+			<circle id="XMLID_65_" class="st0" cx="31.7" cy="100.3" r="1.4"></circle>
+			<circle id="XMLID_64_" class="st0" cx="10.3" cy="111" r="1.4"></circle>
+			<circle id="XMLID_63_" class="st0" cx="31.4" cy="55.6" r="1.4"></circle>
+			<circle id="XMLID_62_" class="st0" cx="4.4" cy="63.2" r="1.4"></circle>
+			<path d="M10.3,110.3L10.3 71.9 28.6 71.9 28.6 100.4 16.3 100.4 16.3 97.7 25.9 97.7 25.9 74.5 13 74.5 13 100.4 " class="st1" id="XMLID_61_"></path>
+			<path d="M16.1,92L23.1 92 23.1 94.3 16.1 94.3 " class="st1" id="XMLID_60_"></path>
+			<path d="M5.4,63.2L28.6 63.2 28.6 65.9 15.7 65.9 15.7 81.2 " class="st1" id="XMLID_59_"></path>
+			<path d="M15.9,85.4L18.3 85.4 18.3 67.8 " class="st1" id="XMLID_58_"></path>
+			<path d="M24.3,82.7L23.2 82.7 23.2 67.8 20.6 67.8 20.6 85.4 24 85.4 " class="st1" id="XMLID_57_"></path>
+			<path d="M31.4,56.5L31.4 78.5 49.1 78.5 49.1 63.2 34 63.2 34 65.9 46.3 65.9 46.3 75.9 34.1 75.9 34.1 71.9 43.7 71.9 43.7 69.3 33.7 69.3 " class="st1" id="XMLID_56_"></path>
+			<path d="M54.6,82.8L34.1 82.8 34.1 80.7 31.4 80.7 31.4 85.4 39.3 85.4 39.3 90.1 31.4 90.1 31.4 92.8 39.3 92.8 39.3 97.6 32.8 97.6 " class="st1" id="XMLID_55_"></path>
+			<path d="M32.5,100.3L52.2 100.3 52.2 97.6 42 97.6 42 92.8 48.7 92.8 48.7 90.1 42 90.1 42 85.4 48.9 85.4 " class="st1" id="XMLID_54_"></path>
+			<path d="M6.4,12.7L43.5 12.7 35.9 22.8 " class="st1" id="XMLID_53_"></path>
+			<path d="M48.1,22.8L27.9 22.8 27.9 25.5 42 25.5 42 34.1 44.7 34.1 44.7 24.9 " class="st1" id="XMLID_52_"></path>
+			<path d="M32.5,22.8L38.4 15.4 29 15.4 " class="st1" id="XMLID_51_"></path>
+			<path d="M23.3,32.2L23.3 22.8 25.9 22.8 25.9 32.2 " class="st1" id="XMLID_50_"></path>
+			<path d="M9.6,7.2L9.6 46.1 19.7 46.1 19.7 14.7 13.9 14.7 13.9 17.3 17 17.3 17 43.4 12.2 43.4 12.2 14.5 " class="st1" id="XMLID_49_"></path>
+			<path d="M51.5,52.4L34.5 37.9 45.7 37.9 45.7 35.2 34.5 35.2 34.5 26.6 31.9 26.6 31.9 35.2 21.4 35.2 21.4 37.9 31.9 37.9 21.9 46.9 23.5 48.7 33.4 40.3 44.8 50.1 " class="st1" id="XMLID_48_"></path>
+			</svg>
+	</div>
+
+</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+
+
+		</script>
+	<script type="text/javascript">
+		document.getElementById('aaaaa').onclick = function(){
+			document.getElementById('test1').className = 'frament active';
+		}
+	    Reveal.addEventListener("fragmentshown", function (event) {
+			console.log("here");	
+	        var ele = event.fragment;
+	        var id = ele.id;
+	        var classString = ele.className;
+
+		    if(id == 'test1'){
+		    	console.log("here");
+		    	// addCSS(cssText);
+		    }
+	    });
+
+	</script>
+	</body>
+</html>
